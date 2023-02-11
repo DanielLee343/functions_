@@ -1,0 +1,174 @@
+
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_opcode.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.5e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/_generator.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.2e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/_sfc64.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.3e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/_pcg64.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.2e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/_philox.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.2e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/_mt19937.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.1e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/_bounded_integers.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.2e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_sha512.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.4e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_random.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.3e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_blake2.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.2e-05 seconds
+vmtouch: WARNING: unable to stat (path (No such file or directory)
+vmtouch: WARNING: unable to stat dev=8,3, (No such file or directory)
+vmtouch: WARNING: unable to stat inode=1039689) (No such file or directory)
+           Files: 1
+     Directories: 0
+   Evicted Pages: 722 (2M)
+         Elapsed: 0.000251 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_hashlib.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.1e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/binascii.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 3.7e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/_common.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/bit_generator.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 3.9e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/random/mtrand.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.1e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/fft/_pocketfft_internal.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 3.9e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/linalg/_umath_linalg.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.9e-05 seconds
+vmtouch: WARNING: unable to stat (path (No such file or directory)
+vmtouch: WARNING: unable to stat dev=8,3, (No such file or directory)
+vmtouch: WARNING: unable to stat inode=1036901 (No such file or directory)
+           Files: 1
+     Directories: 0
+   Evicted Pages: 11 (44K)
+         Elapsed: 8.4e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_bisect.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_ctypes.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/core/_multiarray_tests.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.1e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_pickle.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 3.8e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_datetime.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/math.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 3.8e-05 seconds
+vmtouch: WARNING: unable to stat (path (No such file or directory)
+vmtouch: WARNING: unable to stat dev=8,3, (No such file or directory)
+vmtouch: WARNING: unable to stat inode=1036928) (No such file or directory)
+           Files: 1
+     Directories: 0
+   Evicted Pages: 26 (104K)
+         Elapsed: 8.6e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy.libs/libquadmath-96973f99.so.0.0.0 (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.1e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy.libs/libgfortran-040039e1.so.5.0.0 (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy.libs/libopenblas64_p-r0-15028c96.3.21.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 3.9e-05 seconds
+vmtouch: WARNING: unable to stat /home/app/python/numpy/core/_multiarray_umath.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 3.6e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_struct.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4.1e-05 seconds
+vmtouch: WARNING: unable to stat (path (No such file or directory)
+vmtouch: WARNING: unable to stat dev=8,3, (No such file or directory)
+vmtouch: WARNING: unable to stat inode=1039234) (No such file or directory)
+           Files: 1
+     Directories: 0
+   Evicted Pages: 27 (108K)
+         Elapsed: 9.1e-05 seconds
+vmtouch: WARNING: unable to stat /usr/local/lib/python3.11/lib-dynload/_contextvars.cpython-311-x86_64-linux-gnu.so (No such file or directory)
+           Files: 0
+     Directories: 0
+   Evicted Pages: 0 (0)
+         Elapsed: 4e-05 seconds

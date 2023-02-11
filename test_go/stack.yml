@@ -1,0 +1,15 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  fn1:
+    lang: golang-http
+    handler: ./fn1
+    image: lyuze/fn1:latest
+
+  fn2:
+    lang: golang-http
+    handler: ./fn2
+    image: lyuze/fn2:latest
+

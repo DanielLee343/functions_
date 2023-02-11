@@ -1,0 +1,14 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  infunc-base:
+    lang: python3-debian
+    handler: ./infunc-base
+    image: lyuze/infunc:base
+    environment:
+      read_timeout: "10m"
+      write_timeout: "10m"
+      exec_timeout: "10m"
+

@@ -1,0 +1,17 @@
+COMMAND    PID             USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME
+python3 704883 systemd-coredump  cwd    DIR  0,580     4096 24858076 /home/app
+python3 704883 systemd-coredump  rtd    DIR  0,580     4096 24858152 /
+python3 704883 systemd-coredump  txt    REG  0,580    21440  4189661 /usr/local/bin/python3.11
+python3 704883 systemd-coredump  mem    REG  0,580           4190425 /usr/local/lib/python3.11/lib-dynload/_json.cpython-311-x86_64-linux-gnu.so (stat: No such file or directory)
+python3 704883 systemd-coredump  mem    REG  0,580           4161973 /usr/lib/locale/C.UTF-8/LC_CTYPE (path dev=8,3, inode=525061)
+python3 704883 systemd-coredump  mem    REG  0,580           4161565 /lib/x86_64-linux-gnu/libm-2.31.so (path dev=8,3, inode=1037053)
+python3 704883 systemd-coredump  mem    REG  0,580           4161605 /lib/x86_64-linux-gnu/libutil-2.31.so (path dev=8,3, inode=1037292)
+python3 704883 systemd-coredump  mem    REG  0,580           4161552 /lib/x86_64-linux-gnu/libdl-2.31.so (path dev=8,3, inode=1036863)
+python3 704883 systemd-coredump  mem    REG  0,580           4161589 /lib/x86_64-linux-gnu/libpthread-2.31.so (path dev=8,3, inode=1037181)
+python3 704883 systemd-coredump  mem    REG  0,580           4161544 /lib/x86_64-linux-gnu/libc-2.31.so (path dev=8,3, inode=1036824)
+python3 704883 systemd-coredump  mem    REG  0,580           4162253 /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache (path dev=8,3, inode=1036709)
+python3 704883 systemd-coredump  mem    REG  0,580           4189858 /usr/local/lib/libpython3.11.so.1.0 (stat: No such file or directory)
+python3 704883 systemd-coredump  mem    REG  0,580           4161532 /lib/x86_64-linux-gnu/ld-2.31.so (path dev=8,3, inode=1036745)
+python3 704883 systemd-coredump    0r  FIFO   0,13      0t0 19966916 pipe
+python3 704883 systemd-coredump    1w  FIFO   0,13      0t0 19966917 pipe
+python3 704883 systemd-coredump    2w  FIFO   0,13      0t0 19966917 pipe
