@@ -43,6 +43,7 @@ n = int(sys.argv[1])
 
 A = np.random.rand(n, n)
 B = np.random.rand(n, n)
+# print(A.flags)
 # os.system('sudo lsof -p '+str(pid)+' > after')
 
 start = time.time()

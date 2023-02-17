@@ -113,40 +113,48 @@ get_numa_usage()
     pidIgnore=$(pidof curl)
     pidIgnore=$(echo "$pidIgnore" | tr ' ' ',')
     
-    sudo pcm-memory 0.1 -csv=./$func/$env\_$n\_$lang.csv -f -silent &
+    # sudo pcm-memory 0.1 -csv=./$func/$env\_$n\_$lang.csv -f -silent &
+    sudo pcm-memory 0.1 -csv=./python27.csv -f -silent &
     # let pcm spin up
     sleep 2
     date
     # curl http://127.0.0.1:8080/function/$func -d '{"n":"'$n'"}' 
     # curl -i http://127.0.0.1:8080/function/matmul-cxl-go -d '{"n":"1000"}'
     # sudo numactl --cpunodebind 0 --membind 1 -- python3 /home/cc/functions/run_bench/normal_run/matmul.py $n
-    time curl http://127.0.0.1:8080/function/matmul-cxl -d '{"n":"'$n'"}' & \
-        sleep 0.5
+    # time curl http://127.0.0.1:8080/function/matmul-cxl -d '{"n":"'$n'"}' & \
+     OMP_NUM_THREADS=1 numactl --cpunodebind 0 --membind 1 -- python2.7 /home/cc/functions/run_bench/normal_run/matmul.py 4000 & \
+    check_pid=$!
+    sleep 1
+    if [[ -z $check_pid ]]; then
+        echo "error getting sudo pid, pls run again!" && sudo pkill -9 python && exit 1
+    fi
     # pcmPid=$(echo $!)
     # echo $pcmPid
     # sleep 0.05
-    while :;
+    while [ -d "/proc/${check_pid}" ]
     do
-        check_pid=$(pidof curl)
-        echo $check_pid
-        if [ -z "$check_pid" ]; then
-            # sudo kill -9 $pcmPid
-            echo "killing pcm!!"
-            date
-            sleep 0.5
-            sudo pkill -9 pcm-memory
-            break
-        else
-            sleep 1
-        fi
+        # check_pid=$(pidof python2.7)
+        # echo $check_pid
+        # if [ -z "$check_pid" ]; then
+        #     # sudo kill -9 $pcmPid
+        #     echo "killing pcm!!"
+        #     date
+        #     sleep 0.5
+        #     sudo pkill -9 pcm-memory
+        #     break
+        # else
+        #     sleep 1
+        # fi
+        sleep 0.5
     done
+    sudo pkill -9 pcm-memory
 }
 
 run_one_func_bench()
 {
     local func=matmul
     local env=cxl
-    for n in 13000
+    for n in 4000
     do
         # drop page cache 
         sync; echo 1 | sudo tee /proc/sys/vm/drop_caches

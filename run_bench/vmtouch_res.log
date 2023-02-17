@@ -8350,3 +8350,291 @@
      Directories: 0
    Evicted Pages: 31 (124K)
          Elapsed: 3.1e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 50 (200K)
+         Elapsed: 9.2e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 27 (108K)
+         Elapsed: 4.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 8046 (31M)
+         Elapsed: 0.000349 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 11 (44K)
+         Elapsed: 2.5e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 43 (172K)
+         Elapsed: 3.8e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 496 (1M)
+         Elapsed: 0.000124 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 4 (16K)
+         Elapsed: 2.2e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 5 (20K)
+         Elapsed: 3.9e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 7 (28K)
+         Elapsed: 3.9e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 244 (976K)
+         Elapsed: 0.000112 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 19 (76K)
+         Elapsed: 2.6e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 35 (140K)
+         Elapsed: 3.1e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 4 (16K)
+         Elapsed: 3.9e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 1541 (6M)
+         Elapsed: 0.000429 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 26 (104K)
+         Elapsed: 4.3e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 26 (104K)
+         Elapsed: 2.8e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 198 (792K)
+         Elapsed: 0.000122 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 45 (180K)
+         Elapsed: 4.6e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 100 (400K)
+         Elapsed: 7.7e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 723 (2M)
+         Elapsed: 0.000225 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 656 (2M)
+         Elapsed: 0.000124 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 61 (244K)
+         Elapsed: 4.6e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 20 (80K)
+         Elapsed: 7.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 24 (96K)
+         Elapsed: 2.8e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 4 (16K)
+         Elapsed: 2e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 56 (224K)
+         Elapsed: 4.5e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 335 (1M)
+         Elapsed: 0.000116 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 742 (2M)
+         Elapsed: 9.7e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 1342 (5M)
+         Elapsed: 0.00033 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 57 (228K)
+         Elapsed: 3.9e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 31 (124K)
+         Elapsed: 3e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 11 (44K)
+         Elapsed: 4.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 39 (156K)
+         Elapsed: 4.5e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 79 (316K)
+         Elapsed: 5e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 47 (188K)
+         Elapsed: 5e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 31 (124K)
+         Elapsed: 3e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 50 (200K)
+         Elapsed: 7.2e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 27 (108K)
+         Elapsed: 4.6e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 8046 (31M)
+         Elapsed: 0.000341 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 11 (44K)
+         Elapsed: 2.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 43 (172K)
+         Elapsed: 3.7e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 496 (1M)
+         Elapsed: 0.000117 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 4 (16K)
+         Elapsed: 1.9e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 5 (20K)
+         Elapsed: 4.5e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 7 (28K)
+         Elapsed: 3.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 244 (976K)
+         Elapsed: 0.000134 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 19 (76K)
+         Elapsed: 2.7e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 35 (140K)
+         Elapsed: 3.1e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 4 (16K)
+         Elapsed: 4.7e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 1541 (6M)
+         Elapsed: 0.000419 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 26 (104K)
+         Elapsed: 4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 26 (104K)
+         Elapsed: 2.9e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 198 (792K)
+         Elapsed: 0.000115 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 45 (180K)
+         Elapsed: 5.3e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 100 (400K)
+         Elapsed: 7.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 723 (2M)
+         Elapsed: 0.000224 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 656 (2M)
+         Elapsed: 0.000132 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 61 (244K)
+         Elapsed: 4.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 20 (80K)
+         Elapsed: 5.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 24 (96K)
+         Elapsed: 2.9e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 4 (16K)
+         Elapsed: 2e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 56 (224K)
+         Elapsed: 4.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 335 (1M)
+         Elapsed: 0.000109 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 742 (2M)
+         Elapsed: 0.000102 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 1342 (5M)
+         Elapsed: 0.000339 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 57 (228K)
+         Elapsed: 4.6e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 31 (124K)
+         Elapsed: 3.1e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 11 (44K)
+         Elapsed: 4.3e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 39 (156K)
+         Elapsed: 4.3e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 79 (316K)
+         Elapsed: 5.5e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 47 (188K)
+         Elapsed: 4.4e-05 seconds
+           Files: 1
+     Directories: 0
+   Evicted Pages: 31 (124K)
+         Elapsed: 3.5e-05 seconds

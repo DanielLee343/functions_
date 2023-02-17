@@ -29,7 +29,7 @@ for infile in sorted(filelist):
     print("N1: ", N1_sum_cur)
 
 # write to csv
-with open("python_evict_bm_dstb_only_sos.csv", "w") as csvfile:
+with open("python27_dstb.csv", "w") as csvfile:
     wr = csv.writer(csvfile, delimiter = ',')
     wr.writerow(['node0', 'node1'])
     for i in range(len(N0_list)):

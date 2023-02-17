@@ -1,0 +1,162 @@
+555555554000 bind:1 file=/usr/bin/python2.7 mapped=77 active=1 N1=77 kernelpagesize_kB=4
+5555555a1000 bind:1 file=/usr/bin/python2.7 mapped=368 active=0 N1=368 kernelpagesize_kB=4
+555555745000 bind:1 file=/usr/bin/python2.7 mapped=89 active=0 N1=89 kernelpagesize_kB=4
+55555585b000 bind:1 file=/usr/bin/python2.7 anon=2 dirty=2 N1=2 kernelpagesize_kB=4
+55555585d000 bind:1 file=/usr/bin/python2.7 anon=66 dirty=66 mapped=101 active=66 N1=101 kernelpagesize_kB=4
+5555558d3000 bind:1 heap anon=1347 dirty=1347 N1=1347 kernelpagesize_kB=4
+7fff28073000 bind:1 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7fff28074000 bind:1 anon=4921 dirty=4921 N1=4921 kernelpagesize_kB=4
+7fff6cb16000 bind:1 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7fff6cb17000 bind:1 anon=281250 dirty=281250 N1=281250 kernelpagesize_kB=4
+7fffb15b9000 bind:1 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7fffb15ba000 bind:1 anon=281250 dirty=281250 N1=281250 kernelpagesize_kB=4
+7ffff605c000 bind:1 anon=13 dirty=13 N1=13 kernelpagesize_kB=4
+7ffff609c000 bind:1 file=/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 mapped=120 mapmax=21 N0=120 kernelpagesize_kB=4
+7ffff6114000 bind:1 file=/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 mapped=192 mapmax=21 active=191 N0=65 N1=127 kernelpagesize_kB=4
+7ffff62b0000 bind:1 file=/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 mapped=48 mapmax=19 N0=19 N1=29 kernelpagesize_kB=4
+7ffff6341000 bind:1 file=/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 anon=44 dirty=44 N1=44 kernelpagesize_kB=4
+7ffff636d000 bind:1 file=/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1 anon=2 dirty=2 N1=2 kernelpagesize_kB=4
+7ffff636f000 bind:1 anon=2 dirty=2 N1=2 kernelpagesize_kB=4
+7ffff6381000 bind:1 file=/usr/lib/python2.7/lib-dynload/_hashlib.x86_64-linux-gnu.so mapped=2 active=1 N1=2 kernelpagesize_kB=4
+7ffff6383000 bind:1 file=/usr/lib/python2.7/lib-dynload/_hashlib.x86_64-linux-gnu.so mapped=2 active=0 N1=2 kernelpagesize_kB=4
+7ffff6385000 bind:1 file=/usr/lib/python2.7/lib-dynload/_hashlib.x86_64-linux-gnu.so mapped=1 active=0 N1=1 kernelpagesize_kB=4
+7ffff6386000 bind:1 file=/usr/lib/python2.7/lib-dynload/_hashlib.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff6387000 bind:1 file=/usr/lib/python2.7/lib-dynload/_hashlib.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff6388000 bind:1 anon=256 dirty=256 N1=256 kernelpagesize_kB=4
+7ffff6488000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/random/mtrand.x86_64-linux-gnu.so mapped=10 active=1 N1=10 kernelpagesize_kB=4
+7ffff6492000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/random/mtrand.x86_64-linux-gnu.so mapped=67 active=0 N1=67 kernelpagesize_kB=4
+7ffff6526000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/random/mtrand.x86_64-linux-gnu.so mapped=35 active=0 N1=35 kernelpagesize_kB=4
+7ffff6549000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/random/mtrand.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff654a000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/random/mtrand.x86_64-linux-gnu.so anon=7 dirty=7 mapped=20 active=7 N1=20 kernelpagesize_kB=4
+7ffff656f000 bind:1 anon=257 dirty=257 N1=257 kernelpagesize_kB=4
+7ffff6670000 bind:1 file=/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4 mapped=2 N1=2 kernelpagesize_kB=4
+7ffff6672000 bind:1 file=/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4 mapped=13 N1=13 kernelpagesize_kB=4
+7ffff667f000 bind:1 file=/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+7ffff6681000 bind:1 file=/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff6682000 bind:1 file=/usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff6683000 bind:1 anon=192 dirty=192 N1=192 kernelpagesize_kB=4
+7ffff6743000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/_umath_linalg.x86_64-linux-gnu.so mapped=7 active=1 N1=7 kernelpagesize_kB=4
+7ffff674a000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/_umath_linalg.x86_64-linux-gnu.so mapped=26 active=0 N1=26 kernelpagesize_kB=4
+7ffff6764000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/_umath_linalg.x86_64-linux-gnu.so mapped=5 active=0 N1=5 kernelpagesize_kB=4
+7ffff6769000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/_umath_linalg.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff676a000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/_umath_linalg.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff676b000 bind:1 file=/usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0 mapped=3 active=1 N1=3 kernelpagesize_kB=4
+7ffff676e000 bind:1 file=/usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0 mapped=15 active=0 N1=15 kernelpagesize_kB=4
+7ffff679b000 bind:1 file=/usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0 mapped=15 active=0 N1=15 kernelpagesize_kB=4
+7ffff67b3000 bind:1 file=/usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff67b4000 bind:1 file=/usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff67b5000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgcc_s.so.1 mapped=3 mapmax=9 N1=3 kernelpagesize_kB=4
+7ffff67b8000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgcc_s.so.1 mapped=16 mapmax=9 N1=16 kernelpagesize_kB=4
+7ffff67ca000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgcc_s.so.1 mapped=4 mapmax=9 N1=4 kernelpagesize_kB=4
+7ffff67ce000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgcc_s.so.1 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff67cf000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgcc_s.so.1 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff67d0000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0 mapped=29 active=1 N1=29 kernelpagesize_kB=4
+7ffff67ed000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0 mapped=41 active=0 N1=41 kernelpagesize_kB=4
+7ffff6a62000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0 mapped=16 active=0 N1=16 kernelpagesize_kB=4
+7ffff6a94000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0
+7ffff6a95000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff6a96000 bind:1 file=/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0 anon=2 dirty=2 N1=2 kernelpagesize_kB=4
+7ffff6a98000 bind:1 file=/usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0 mapped=31 active=1 N1=31 kernelpagesize_kB=4
+7ffff6ab7000 bind:1 file=/usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0 mapped=16 active=0 N1=16 kernelpagesize_kB=4
+7ffff7091000 bind:1 file=/usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0
+7ffff7136000 bind:1 file=/usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0 anon=4 dirty=4 N1=4 kernelpagesize_kB=4
+7ffff713a000 bind:1 file=/usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.9.0 anon=2 dirty=2 N1=2 kernelpagesize_kB=4
+7ffff713c000 bind:1 anon=384 dirty=384 N1=384 kernelpagesize_kB=4
+7ffff72bd000 bind:1 file=/usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 mapped=2 mapmax=6 N0=2 kernelpagesize_kB=4
+7ffff72bf000 bind:1 file=/usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 mapped=6 mapmax=6 N0=6 kernelpagesize_kB=4
+7ffff72c5000 bind:1 file=/usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 mapped=1 mapmax=4 N0=1 kernelpagesize_kB=4
+7ffff72c6000 bind:1 file=/usr/lib/x86_64-linux-gnu/libffi.so.7.1.0
+7ffff72c7000 bind:1 file=/usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff72c8000 bind:1 file=/usr/lib/x86_64-linux-gnu/libffi.so.7.1.0 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff72c9000 bind:1 file=/usr/lib/python2.7/lib-dynload/_ctypes.x86_64-linux-gnu.so mapped=7 active=1 N1=7 kernelpagesize_kB=4
+7ffff72d0000 bind:1 file=/usr/lib/python2.7/lib-dynload/_ctypes.x86_64-linux-gnu.so mapped=16 active=0 N1=16 kernelpagesize_kB=4
+7ffff72e0000 bind:1 file=/usr/lib/python2.7/lib-dynload/_ctypes.x86_64-linux-gnu.so mapped=7 active=0 N1=7 kernelpagesize_kB=4
+7ffff72e7000 bind:1 file=/usr/lib/python2.7/lib-dynload/_ctypes.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff72e8000 bind:1 file=/usr/lib/python2.7/lib-dynload/_ctypes.x86_64-linux-gnu.so anon=4 dirty=4 N1=4 kernelpagesize_kB=4
+7ffff72ec000 bind:1 anon=192 dirty=192 N1=192 kernelpagesize_kB=4
+7ffff73ac000 bind:1 file=/usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0 mapped=5 active=1 N1=5 kernelpagesize_kB=4
+7ffff73b1000 bind:1 file=/usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0 mapped=47 active=0 N1=47 kernelpagesize_kB=4
+7ffff7410000 bind:1 file=/usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0 mapped=7 active=0 N1=7 kernelpagesize_kB=4
+7ffff7417000 bind:1 file=/usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7418000 bind:1 file=/usr/lib/x86_64-linux-gnu/blas/libblas.so.3.9.0 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff741b000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/fft/fftpack_lite.x86_64-linux-gnu.so mapped=1 N1=1 kernelpagesize_kB=4
+7ffff741c000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/fft/fftpack_lite.x86_64-linux-gnu.so mapped=8 active=0 N1=8 kernelpagesize_kB=4
+7ffff7424000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/fft/fftpack_lite.x86_64-linux-gnu.so mapped=1 active=0 N1=1 kernelpagesize_kB=4
+7ffff7425000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/fft/fftpack_lite.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7426000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/fft/fftpack_lite.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7427000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_umath.x86_64-linux-gnu.so mapped=38 active=1 N1=38 kernelpagesize_kB=4
+7ffff744d000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_umath.x86_64-linux-gnu.so mapped=347 active=0 N1=347 kernelpagesize_kB=4
+7ffff769a000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_umath.x86_64-linux-gnu.so mapped=67 active=0 N1=67 kernelpagesize_kB=4
+7ffff7722000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_umath.x86_64-linux-gnu.so
+7ffff7723000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_umath.x86_64-linux-gnu.so anon=2 dirty=2 N1=2 kernelpagesize_kB=4
+7ffff7725000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_umath.x86_64-linux-gnu.so anon=20 dirty=20 mapped=29 active=20 N1=29 kernelpagesize_kB=4
+7ffff7742000 bind:1 anon=78 dirty=78 N1=78 kernelpagesize_kB=4
+7ffff77a2000 bind:1 file=/usr/lib/locale/C.UTF-8/LC_CTYPE mapped=29 mapmax=17 N0=29 kernelpagesize_kB=4
+7ffff77d4000 bind:1 file=/usr/lib/locale/locale-archive mapped=16 mapmax=14 N0=16 kernelpagesize_kB=4
+7ffff7aba000 bind:1 anon=192 dirty=192 N1=192 kernelpagesize_kB=4
+7ffff7b7c000 bind:1 file=/usr/lib/python2.7/lib-dynload/future_builtins.x86_64-linux-gnu.so mapped=1 N1=1 kernelpagesize_kB=4
+7ffff7b7d000 bind:1 file=/usr/lib/python2.7/lib-dynload/future_builtins.x86_64-linux-gnu.so mapped=1 active=0 N1=1 kernelpagesize_kB=4
+7ffff7b7e000 bind:1 file=/usr/lib/python2.7/lib-dynload/future_builtins.x86_64-linux-gnu.so mapped=1 active=0 N1=1 kernelpagesize_kB=4
+7ffff7b7f000 bind:1 file=/usr/lib/python2.7/lib-dynload/future_builtins.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7b80000 bind:1 file=/usr/lib/python2.7/lib-dynload/future_builtins.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7b81000 bind:1 file=/usr/lib/python2.7/lib-dynload/bz2.x86_64-linux-gnu.so mapped=3 active=1 N1=3 kernelpagesize_kB=4
+7ffff7b84000 bind:1 file=/usr/lib/python2.7/lib-dynload/bz2.x86_64-linux-gnu.so mapped=5 active=0 N1=5 kernelpagesize_kB=4
+7ffff7b89000 bind:1 file=/usr/lib/python2.7/lib-dynload/bz2.x86_64-linux-gnu.so mapped=2 active=0 N1=2 kernelpagesize_kB=4
+7ffff7b8b000 bind:1 file=/usr/lib/python2.7/lib-dynload/bz2.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7b8c000 bind:1 file=/usr/lib/python2.7/lib-dynload/bz2.x86_64-linux-gnu.so anon=2 dirty=2 N1=2 kernelpagesize_kB=4
+7ffff7b8e000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_tests.x86_64-linux-gnu.so mapped=7 active=1 N1=7 kernelpagesize_kB=4
+7ffff7b95000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_tests.x86_64-linux-gnu.so mapped=15 active=0 N1=15 kernelpagesize_kB=4
+7ffff7ba4000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_tests.x86_64-linux-gnu.so mapped=4 active=0 N1=4 kernelpagesize_kB=4
+7ffff7ba8000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_tests.x86_64-linux-gnu.so
+7ffff7ba9000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_tests.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7baa000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/core/_multiarray_tests.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7bab000 bind:1 anon=131 dirty=131 N1=131 kernelpagesize_kB=4
+7ffff7c30000 bind:1 file=/usr/lib/x86_64-linux-gnu/libm-2.31.so mapped=13 mapmax=19 N0=13 kernelpagesize_kB=4
+7ffff7c3d000 bind:1 file=/usr/lib/x86_64-linux-gnu/libm-2.31.so mapped=96 mapmax=19 N0=64 N1=32 kernelpagesize_kB=4
+7ffff7ce4000 bind:1 file=/usr/lib/x86_64-linux-gnu/libm-2.31.so mapped=60 mapmax=5 N0=15 N1=45 kernelpagesize_kB=4
+7ffff7d7d000 bind:1 file=/usr/lib/x86_64-linux-gnu/libm-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7d7e000 bind:1 file=/usr/lib/x86_64-linux-gnu/libm-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7d7f000 bind:1 file=/usr/lib/x86_64-linux-gnu/libz.so.1.2.11 mapped=2 mapmax=9 N0=2 kernelpagesize_kB=4
+7ffff7d81000 bind:1 file=/usr/lib/x86_64-linux-gnu/libz.so.1.2.11 mapped=15 mapmax=8 N0=15 kernelpagesize_kB=4
+7ffff7d92000 bind:1 file=/usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+7ffff7d98000 bind:1 file=/usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+7ffff7d99000 bind:1 file=/usr/lib/x86_64-linux-gnu/libz.so.1.2.11 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7d9a000 bind:1 file=/usr/lib/x86_64-linux-gnu/libz.so.1.2.11 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7d9b000 bind:1 file=/usr/lib/x86_64-linux-gnu/libutil-2.31.so mapped=1 mapmax=9 N1=1 kernelpagesize_kB=4
+7ffff7d9c000 bind:1 file=/usr/lib/x86_64-linux-gnu/libutil-2.31.so mapped=1 mapmax=8 N1=1 kernelpagesize_kB=4
+7ffff7d9d000 bind:1 file=/usr/lib/x86_64-linux-gnu/libutil-2.31.so
+7ffff7d9e000 bind:1 file=/usr/lib/x86_64-linux-gnu/libutil-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7d9f000 bind:1 file=/usr/lib/x86_64-linux-gnu/libutil-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7da0000 bind:1 file=/usr/lib/x86_64-linux-gnu/libdl-2.31.so mapped=1 mapmax=49 N0=1 kernelpagesize_kB=4
+7ffff7da1000 bind:1 file=/usr/lib/x86_64-linux-gnu/libdl-2.31.so mapped=2 mapmax=39 N0=2 kernelpagesize_kB=4
+7ffff7da3000 bind:1 file=/usr/lib/x86_64-linux-gnu/libdl-2.31.so mapped=1 mapmax=6 N0=1 kernelpagesize_kB=4
+7ffff7da4000 bind:1 file=/usr/lib/x86_64-linux-gnu/libdl-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7da5000 bind:1 file=/usr/lib/x86_64-linux-gnu/libdl-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7da6000 bind:1 file=/usr/lib/x86_64-linux-gnu/libpthread-2.31.so mapped=6 mapmax=47 N0=6 kernelpagesize_kB=4
+7ffff7dac000 bind:1 file=/usr/lib/x86_64-linux-gnu/libpthread-2.31.so mapped=17 mapmax=50 N0=17 kernelpagesize_kB=4
+7ffff7dbd000 bind:1 file=/usr/lib/x86_64-linux-gnu/libpthread-2.31.so mapped=6 mapmax=24 N0=6 kernelpagesize_kB=4
+7ffff7dc3000 bind:1 file=/usr/lib/x86_64-linux-gnu/libpthread-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7dc4000 bind:1 file=/usr/lib/x86_64-linux-gnu/libpthread-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7dc5000 bind:1 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7dc9000 bind:1 file=/usr/lib/x86_64-linux-gnu/libc-2.31.so mapped=34 mapmax=59 N0=34 kernelpagesize_kB=4
+7ffff7deb000 bind:1 file=/usr/lib/x86_64-linux-gnu/libc-2.31.so mapped=293 mapmax=63 N0=292 N1=1 kernelpagesize_kB=4
+7ffff7f63000 bind:1 file=/usr/lib/x86_64-linux-gnu/libc-2.31.so mapped=45 mapmax=62 N0=45 kernelpagesize_kB=4
+7ffff7fb1000 bind:1 file=/usr/lib/x86_64-linux-gnu/libc-2.31.so anon=4 dirty=4 N1=4 kernelpagesize_kB=4
+7ffff7fb5000 bind:1 file=/usr/lib/x86_64-linux-gnu/libc-2.31.so anon=2 dirty=2 N1=2 kernelpagesize_kB=4
+7ffff7fb7000 bind:1 anon=5 dirty=5 N1=5 kernelpagesize_kB=4
+7ffff7fbe000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/lapack_lite.x86_64-linux-gnu.so mapped=1 N1=1 kernelpagesize_kB=4
+7ffff7fbf000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/lapack_lite.x86_64-linux-gnu.so mapped=2 active=0 N1=2 kernelpagesize_kB=4
+7ffff7fc1000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/lapack_lite.x86_64-linux-gnu.so mapped=1 active=0 N1=1 kernelpagesize_kB=4
+7ffff7fc2000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/lapack_lite.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7fc3000 bind:1 file=/usr/lib/python2.7/dist-packages/numpy/linalg/lapack_lite.x86_64-linux-gnu.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7fc4000 bind:1 file=/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache mapped=7 mapmax=16 N0=7 kernelpagesize_kB=4
+7ffff7fcb000 bind:1
+7ffff7fce000 bind:1
+7ffff7fcf000 bind:1 file=/usr/lib/x86_64-linux-gnu/ld-2.31.so mapped=1 mapmax=58 N0=1 kernelpagesize_kB=4
+7ffff7fd0000 bind:1 file=/usr/lib/x86_64-linux-gnu/ld-2.31.so mapped=35 mapmax=60 N0=35 kernelpagesize_kB=4
+7ffff7ff3000 bind:1 file=/usr/lib/x86_64-linux-gnu/ld-2.31.so mapped=8 mapmax=59 N0=8 kernelpagesize_kB=4
+7ffff7ffb000 bind:1 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7ffc000 bind:1 file=/usr/lib/x86_64-linux-gnu/ld-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7ffd000 bind:1 file=/usr/lib/x86_64-linux-gnu/ld-2.31.so anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffff7ffe000 bind:1 anon=1 dirty=1 N1=1 kernelpagesize_kB=4
+7ffffffde000 bind:1 stack anon=9 dirty=9 N1=9 kernelpagesize_kB=4
