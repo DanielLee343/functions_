@@ -12,7 +12,7 @@ from time import time
 import os
 import shutil
 
-def train_model(model, criterion, optimizer, image_datasets, dataloaders, device, num_epochs=3):
+def train_model(model, criterion, optimizer, image_datasets, dataloaders, device, num_epochs=1):
     for epoch in range(num_epochs):
         print('Epoch {}/{}'.format(epoch+1, num_epochs))
         print('-' * 10)
@@ -103,10 +103,10 @@ def setup_and_do_resnet(batch_size=32):
                 nn.ReLU(inplace=True),
                 nn.Linear(128, 2)).to(device)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.fc.parameters())
+    optimizer = optim.Adam(model.fc.parameters(), lr=1e-3)
 
     start = time()
-    model_trained = train_model(model, criterion, optimizer, image_datasets, dataloaders, device, num_epochs=3)
+    model_trained = train_model(model, criterion, optimizer, image_datasets, dataloaders, device, num_epochs=1)
     latency = time() - start
     print(latency)
     return latency

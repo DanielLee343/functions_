@@ -27,4 +27,4 @@ img_proc()
     done
 }
 
-img_proc
+# resnet_training_bm
