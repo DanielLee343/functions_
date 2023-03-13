@@ -13,6 +13,6 @@ functions:
       exec_timeout: "10m"
     labels:
       #com.openfaas.scale.zero: "false"
-      com.openfaas.scale.min: 2
+      com.openfaas.scale.min: 1
       com.openfaas.scale.max: 5
-      com.openfaas.scale.factor: 100
+      com.openfaas.scale.factor: 20

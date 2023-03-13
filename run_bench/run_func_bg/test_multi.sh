@@ -1,4 +1,5 @@
-for i in {1..5}
+for i in {1..2000}
 do
-    curl -i http://127.0.0.1:8080/function/matmul-cxl-go -d '{"n":"5000"}' &
+    curl http://127.0.0.1:8080/function/matmul-cxl-go -d '{"n":"100"}' &
+    sleep 0.01
 done
