@@ -1,0 +1,49 @@
+
+doing pagerank 100000 base 
+{'algo': 'pagerank', 'graph_generating_time': 0.5714223384857178, 'compute_time': 0.15693449974060059}
+doing pagerank 100000 cxl 
+{'algo': 'pagerank', 'graph_generating_time': 0.6007757186889648, 'compute_time': 0.20257019996643066}
+doing pagerank 500000 base 
+{'algo': 'pagerank', 'graph_generating_time': 3.694786548614502, 'compute_time': 1.2944121360778809}
+doing pagerank 500000 cxl 
+{'algo': 'pagerank', 'graph_generating_time': 4.5776262283325195, 'compute_time': 1.8108632564544678}
+doing pagerank 1000000 base 
+{'algo': 'pagerank', 'graph_generating_time': 8.20963430404663, 'compute_time': 3.232466697692871}
+doing pagerank 1000000 cxl 
+{'algo': 'pagerank', 'graph_generating_time': 10.495499610900879, 'compute_time': 4.657006025314331}
+doing pagerank 2000000 base 
+{'algo': 'pagerank', 'graph_generating_time': 18.15926504135132, 'compute_time': 8.523173093795776}
+doing pagerank 2000000 cxl 
+{'algo': 'pagerank', 'graph_generating_time': 24.04537010192871, 'compute_time': 12.229271173477173}
+doing mst 100000 base 
+{'algo': 'mst', 'graph_generating_time': 0.5714941024780273, 'compute_time': 0.04830741882324219}
+doing mst 100000 cxl 
+{'algo': 'mst', 'graph_generating_time': 0.6025340557098389, 'compute_time': 0.07489514350891113}
+doing mst 500000 base 
+{'algo': 'mst', 'graph_generating_time': 3.744270086288452, 'compute_time': 0.3933887481689453}
+doing mst 500000 cxl 
+{'algo': 'mst', 'graph_generating_time': 4.5449583530426025, 'compute_time': 0.5759251117706299}
+doing mst 1000000 base 
+{'algo': 'mst', 'graph_generating_time': 8.214758157730103, 'compute_time': 0.8700628280639648}
+doing mst 1000000 cxl 
+{'algo': 'mst', 'graph_generating_time': 10.441548824310303, 'compute_time': 1.282923698425293}
+doing mst 2000000 base 
+{'algo': 'mst', 'graph_generating_time': 18.050371408462524, 'compute_time': 1.9230406284332275}
+doing mst 2000000 cxl 
+{'algo': 'mst', 'graph_generating_time': 24.045878648757935, 'compute_time': 2.8475635051727295}
+doing bfs 100000 base 
+{'algo': 'bfs', 'graph_generating_time': 0.5704548358917236, 'compute_time': 0.04550766944885254}
+doing bfs 100000 cxl 
+{'algo': 'bfs', 'graph_generating_time': 0.6007797718048096, 'compute_time': 0.060487985610961914}
+doing bfs 500000 base 
+{'algo': 'bfs', 'graph_generating_time': 3.762000560760498, 'compute_time': 0.3373587131500244}
+doing bfs 500000 cxl 
+{'algo': 'bfs', 'graph_generating_time': 4.52075982093811, 'compute_time': 0.4815802574157715}
+doing bfs 1000000 base 
+{'algo': 'bfs', 'graph_generating_time': 8.248488664627075, 'compute_time': 0.7265167236328125}
+doing bfs 1000000 cxl 
+{'algo': 'bfs', 'graph_generating_time': 10.493655443191528, 'compute_time': 1.2544076442718506}
+doing bfs 2000000 base 
+{'algo': 'bfs', 'graph_generating_time': 18.210962057113647, 'compute_time': 1.6468205451965332}
+doing bfs 2000000 cxl 
+{'algo': 'bfs', 'graph_generating_time': 23.81374716758728, 'compute_time': 2.300018310546875}

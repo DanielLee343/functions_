@@ -104,29 +104,33 @@ get_func_cpu_usage()
 
 get_numa_usage() 
 {
-    local func=$1
-    local n=$2
-    local env=$3
-    local lang=python3
+    # local func=$1
+    # local n=$2
+    # local env=$3
+    # local lang=python3
 
-    echo | sudo tee ./$func/$env\_$n\_$lang.csv
-    pidIgnore=$(pidof curl)
-    pidIgnore=$(echo "$pidIgnore" | tr ' ' ',')
+    # echo | sudo tee ./$func/$env\_$n\_$lang.csv
+    # pidIgnore=$(pidof curl)
+    # pidIgnore=$(echo "$pidIgnore" | tr ' ' ',')
     
     # sudo pcm-memory 0.1 -csv=./$func/$env\_$n\_$lang.csv -f -silent &
-    sudo pcm-memory 0.1 -csv=./python27.csv -f -silent &
+    sudo rm -rf ./cifar100_numa_log/resnet512_cxl.csv
+    sudo pcm-memory 0.1 -csv=./cifar100_numa_log/resnet512_cxl.csv -f -silent &
+    # sudo pcm-memory 0.1 -csv=./test_pcm_bug.csv -f -silent &
     # let pcm spin up
     sleep 2
-    date
+    # date
     # curl http://127.0.0.1:8080/function/$func -d '{"n":"'$n'"}' 
-    # curl -i http://127.0.0.1:8080/function/matmul-cxl-go -d '{"n":"1000"}'
+    curl http://127.0.0.1:8080/function/cifar100-cxl -d '{"batches":"3000","bs":"128","net":"resnet152"}' &
+    # curl http://127.0.0.1:8080/function/matmul-cxl-go -d '{"n":"7000"}' &
     # sudo numactl --cpunodebind 0 --membind 1 -- python3 /home/cc/functions/run_bench/normal_run/matmul.py $n
     # time curl http://127.0.0.1:8080/function/matmul-cxl -d '{"n":"'$n'"}' & \
-     OMP_NUM_THREADS=1 numactl --cpunodebind 0 --membind 1 -- python2.7 /home/cc/functions/run_bench/normal_run/matmul.py 4000 & \
-    check_pid=$!
-    sleep 1
+    # OMP_NUM_THREADS=1 numactl --cpunodebind 0 --membind 1 -- python2.7 /home/cc/functions/run_bench/normal_run/matmul.py 4000 & \
+    sleep 1.5
+    # check_pid=$(pidof python3)
+    check_pid=$(ps aux | grep 'python3 index.py' | grep -v grep | awk '{print $2}')
     if [[ -z $check_pid ]]; then
-        echo "error getting sudo pid, pls run again!" && sudo pkill -9 python && exit 1
+        echo "error getting sudo pid, pls run again!" && sudo pkill -9 python3; sudo pkill -9 pcm-memory && exit 1
     fi
     # pcmPid=$(echo $!)
     # echo $pcmPid
@@ -147,6 +151,7 @@ get_numa_usage()
         # fi
         sleep 0.5
     done
+    echo "killing pcm"
     sudo pkill -9 pcm-memory
 }
 
@@ -168,5 +173,6 @@ run_one_func_bench()
 
 # $1: function to run <matmul>
 # $2: env <base, cxl>
-run_one_func_bench
+# run_one_func_bench
 
+get_numa_usage

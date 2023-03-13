@@ -11,3 +11,8 @@ functions:
       read_timeout: "10m"
       write_timeout: "10m"
       exec_timeout: "10m"
+    labels:
+      #com.openfaas.scale.zero: "false"
+      com.openfaas.scale.min: 2
+      com.openfaas.scale.max: 5
+      com.openfaas.scale.factor: 100
