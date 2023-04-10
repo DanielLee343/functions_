@@ -1,0 +1,64 @@
+# chameleon:
+curl http://127.0.0.1:8080/function/chameleon-cxl -d '{"n":"1000"}'
+    # bare metal:
+    python /home/cc/functions/run_bench/normal_run/chameleon_.py 1000
+
+# para comp:
+curl http://127.0.0.1:8080/function/para-comp-cxl -d '{"n":"100000000","p":"12"}'
+    # bare metal:
+    python3 /home/cc/functions/run_bench/normal_run/para_comp.py 100000000 12
+
+# img proc:
+curl http://127.0.0.1:8080/function/img-cxl -d '{"img_size":"10mb"}'
+    # bare metal:
+    python3 /home/cc/functions/run_bench/normal_run/img_proc/img_proc.py 10mb
+
+# matmul go:
+curl http://127.0.0.1:8080/function/matmul-go-cxl -d '{"n":"7500"}'
+    # bare metal:
+    matmul 7500
+
+# linpack go:
+curl http://127.0.0.1:8080/function/linpack-go-cxl -d '{"n":"100"}'
+    # bare metal:
+    linpack 6000
+
+# pagerank:
+curl http://127.0.0.1:8080/function/graph-cxl -d '{"algo":"pagerank","size":"100000"}'
+    # bare metal:
+    python3 /home/cc/functions/run_bench/normal_run/graph.py pagerank 10000
+
+# bfs:
+curl http://127.0.0.1:8080/function/graph-cxl -d '{"algo":"bfs","size":"100000"}'
+    # bare metal:
+    python3 /home/cc/functions/run_bench/normal_run/graph.py bfs 10000
+
+# mst:
+curl http://127.0.0.1:8080/function/graph-cxl -d '{"algo":"mst","size":"100000"}'
+    # bare metal
+    python3 /home/cc/functions/run_bench/normal_run/graph.py mst 10000
+
+# gif:
+curl http://127.0.0.1:8080/function/watermark-cxl -d '{"op":"to_gif","video":"10mb"}'
+    # bare metal:
+    python3 /home/cc/functions/run_bench/normal_run/watermark/watermark.py 10mb to_gif
+
+# watermark:
+curl http://127.0.0.1:8080/function/watermark-cxl -d '{"op":"watermark","video":"10mb"}'
+    # bare metal:
+    python3 /home/cc/functions/run_bench/normal_run/watermark/watermark.py 10mb watermark
+
+# resnet18 training:
+curl http://127.0.0.1:8080/function/cifar100-cxl -d '{"task":"train","net":"resnet18"}'
+    # bare metal:
+    python /home/cc/bm_test/cifar100/cifar100.py train resnet18
+
+# squeezenet training:
+curl http://127.0.0.1:8080/function/cifar100-cxl -d '{"task":"train","net":"squeezenet"}'
+    # bare metal:
+    python /home/cc/bm_test/cifar100/cifar100.py train squeezenet
+    
+# resnet152 serving:
+curl http://127.0.0.1:8080/function/cifar100-cxl -d '{"task":"serve","net":"resnet152"}'
+    # bare metal:
+    python /home/cc/bm_test/cifar100/cifar100.py serve resnet152

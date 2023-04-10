@@ -1,0 +1,33 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  matmul-go-cxl:
+    lang: go
+    handler: ./matmul_go
+    image: lyuze/matmul-go
+    fprocess: numactl --cpunodebind 0 --membind 1 -- /go/src/handler/handler
+    environment:
+      read_timeout: "10m"
+      write_timeout: "10m"
+      exec_timeout: "10m"
+    labels:
+      #com.openfaas.scale.zero: "false"
+      com.openfaas.scale.min: 1
+      com.openfaas.scale.max: 5
+      com.openfaas.scale.factor: 20
+  matmul-go-base:
+    lang: go
+    handler: ./matmul_go
+    image: lyuze/matmul-go
+    fprocess: numactl --cpunodebind 0 --membind 0 -- /go/src/handler/handler
+    environment:
+      read_timeout: "10m"
+      write_timeout: "10m"
+      exec_timeout: "10m"
+    labels:
+      #com.openfaas.scale.zero: "false"
+      com.openfaas.scale.min: 1
+      com.openfaas.scale.max: 5
+      com.openfaas.scale.factor: 20
