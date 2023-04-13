@@ -1,0 +1,6 @@
+build
+.secrets
+*.mp4
+*.tar
+*.pkl
+*.png
