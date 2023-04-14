@@ -7,33 +7,43 @@ gen_rss()
     local workload_name=$2
     RSS_FILE=$PLAYGROUND_DIR/$workload_name/"$workload_name"_rss.csv
 
-    if [ -f "$RSS_FILE" ]; then
-        rm -rf $RSS_FILE
-    fi
-
+    time=0
     while [ -d "/proc/${check_pid}" ]
     do
-        ps aux | grep $check_pid | awk '{print $6}' | head -n 1 | awk '{print $1/1024}' | bc >> $RSS_FILE
+        cur_rss=$(ps aux | grep $check_pid | awk '{print $6}' | head -n 1 | awk '{print $1/1024}' | bc)
+        time=$(echo "$time + 0.1" | bc)
+        echo $time","$cur_rss >> $RSS_FILE
         sleep 0.1
     done
-
     # TODO: plot rss
+    gnuplot -e "output_file='$PLAYGROUND_DIR/$workload_name/"$workload_name"_rss.png'; \
+        input_file='$RSS_FILE'; \
+        wl_title='$workload_name'" \
+        ./plot_rss.gnuplot 
 }
 
 gen_bw()
 {
     local check_pid=$1
     local workload_name=$2 
-    sudo pcm-memory 0.1 -csv="$PLAYGROUND_DIR"/"$workload_name"_bw.csv -f -silent &
+    BW_PCM_FILE=$PLAYGROUND_DIR/$workload_name/"$workload_name"_bw_raw.csv
+    sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent &
     while [ -d "/proc/${check_pid}" ]
     do
         sleep 0.5
     done
-    sudo pkill -9 pcm-memory
+    sudo pkill -9 pcm-memory >/dev/null 2>&1
+    sleep 1
 
     # TODO: process the csv using python 
-    
+    echo "generating BW csv for $workload_name"
+    python /home/cc/functions/run_bench/process_numa_mem.py $BW_PCM_FILE $workload_name
     # TODO: generate plot
+    gnuplot -e "output_file='$PLAYGROUND_DIR/$workload_name/"$workload_name"_bw.png'; \
+        input_file='$PLAYGROUND_DIR/$workload_name/"$workload_name"_bw.csv'; \
+        wl_title='$workload_name'" \
+        ./plot_bw.gnuplot 
+    echo "done"
 }
 
 gen_heatmap()
@@ -41,17 +51,18 @@ gen_heatmap()
     local check_pid=$1
     local workload_name=$2
     # check if region range is good
+    DEMO_FILE=$PLAYGROUND_DIR/$workload_name/"$workload_name".data
     sudo damo record --monitoring_nr_regions_range 1000 2000 \
-        -o $PLAYGROUND_DIR/$workload_name/"$workload_name".data $check_pid
-    sudo damo report raw -i $PLAYGROUND_DIR/$workload_name/"$workload_name".data \
+        -o $DEMO_FILE $check_pid
+    sudo damo report raw -i $DEMO_FILE \
         > $PLAYGROUND_DIR/$workload_name/"$workload_name".txt
-    sudo damo report heats -i $PLAYGROUND_DIR/$workload_name/"$workload_name".data \
+    sudo damo report heats -i $DEMO_FILE \
         --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png
-    sudo damo report wss -i $PLAYGROUND_DIR/$workload_name/"$workload_name".data \
+    sudo damo report wss -i $DEMO_FILE \
         --sortby time \
         --range 0 100 1 \
         --plot $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.png
-    
+    sudo chown -R $(whoami) $PLAYGROUND_DIR/$workload_name/*
 }
 
 run_workload()
@@ -62,9 +73,10 @@ run_workload()
     local func=$2
     # bm (bare metal), faas, add later
     local level=$3
+
     get_rss=true
     get_bw=false
-    get_heatmap=true
+    get_heatmap=false
 
     echo "running $func in $env"
     if [ "$env" = "cxl" ]; then
@@ -78,7 +90,7 @@ run_workload()
     fi
     
     if [ "$func" = "chameleon" ]; then
-        workload_cmd="python /home/cc/functions/run_bench/normal_run/chameleon_.py 3500"
+        workload_cmd="python /home/cc/functions/run_bench/normal_run/chameleon_.py 1500"
     elif [ "$func" = "para_comp" ]; then
         workload_cmd="python /home/cc/functions/run_bench/normal_run/para_comp.py 3000000000 12"
     elif [ "$func" = "img_proc" ]; then
@@ -109,9 +121,15 @@ run_workload()
 
     $cmd_prefix $workload_cmd & 
     check_pid=$!
+    if [ "$check_pid" = "" ]; then
+        echo "unable to get wl pid, something is wrong"; exit 1
+    fi
 
-    if [ ! -d "$PLAYGROUND_DIR/$workload_name" ]; then
-        mkdir -p $PLAYGROUND_DIR/$workload_name
+    if [ ! -d "$PLAYGROUND_DIR/$func" ]; then
+        echo "does not exists"
+        mkdir -p $PLAYGROUND_DIR/$func
+    else
+        rm -rf $PLAYGROUND_DIR/$func/*
     fi
 
     if [ "$get_rss" = true ] ; then
@@ -123,7 +141,6 @@ run_workload()
     if [ "$get_heatmap" = true ]; then
         gen_heatmap $check_pid $func &
     fi
-        
 }
 
 # $1: env <base, cxl>
