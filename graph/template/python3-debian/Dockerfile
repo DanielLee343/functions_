@@ -48,6 +48,7 @@ RUN chown -R app:app ./ && \
     chmod -R 777 /home/app/python
 
 USER app
+COPY 4000000.pkl /home/app
 
 ENV fprocess="python3 index.py"
 EXPOSE 8080
