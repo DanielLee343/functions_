@@ -50,6 +50,7 @@ gen_bw()
         wl_title='$workload_name'" \
         $SCRIPT_DIR/plot_bw.gnuplot 
     echo "plot bw done"
+    python /home/cc/functions/run_bench/get_bw_wss_stat.py $workload_name bw
 }
 
 gen_heatmap()
@@ -69,10 +70,13 @@ gen_heatmap()
     sudo damo report heats -i $DEMO_FILE \
         --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png
     sudo damo report wss -i $DEMO_FILE \
+        --all_wss > $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.txt
+    sudo damo report wss -i $DEMO_FILE \
         --sortby time \
         --range 0 100 1 \
         --plot $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.png
     sudo chown -R $(whoami) $PLAYGROUND_DIR/$workload_name/*
+    python /home/cc/functions/run_bench/get_bw_wss_stat.py $workload_name wss
     echo "plot wss and heatmap done"
 }
 
@@ -146,6 +150,11 @@ run_workload()
     # run_trace_prefix="numactl --cpunodebind 1 -- "
     if [ "$get_rss" = true ] ; then
         if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ]; then
+            perf_record_pid=$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)
+            if [ ! -z $perf_record_pid ]; then
+                echo "killing $perf_record_pid"
+                sudo kill -9 $perf_record_pid
+            fi
             while [ -z "$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)" ]
             do
                 sleep 0.1

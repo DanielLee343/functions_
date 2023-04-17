@@ -84,6 +84,7 @@ def main():
 
     download_path = os.path.join(SCRIPT_DIR, video_full_name)
     if os.path.isfile(download_path) == False:
+        print("downloading file...")
         download_begin = datetime.datetime.now()
         s3_client.download_file(input_bucket, "video_proc/"+video_full_name, download_path)
         download_size = os.path.getsize(download_path)
