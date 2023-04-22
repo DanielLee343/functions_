@@ -3,3 +3,9 @@ build
 *.mp4
 *.tar
 *.pkl
+*.jpg
+*.el
+
+run_bench/normal_run/graph_dir
+run_bench/playground
+run_bench/vtune_log
