@@ -11,7 +11,7 @@ import ops as ops
 
 # FILE_NAME_INDEX = 2
 Image.MAX_IMAGE_PIXELS = None
-
+CUR_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 
 def image_processing(file_name, image_path):
     path_list = []
@@ -68,11 +68,12 @@ def main():
         object_key = "img_proc/1mb.jpg"
         # img_url = "https://sample-videos.com/img/Sample-jpg-image-1mb.jpg"
 
-    download_path = './{}{}'.format(img_size, ".jpg")
+    download_path = os.path.join(CUR_DIR, '{}.jpg'.format(img_size))
     img_name = "sample.jpg"
 
     # download_file(img_url, download_path)
     if os.path.isfile(download_path) == False:
+        print("don't find img, downloading it...")
         s3_client.download_file(input_bucket, object_key, download_path)
 
     latency, path_list = image_processing(img_name, download_path)

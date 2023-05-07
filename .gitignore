@@ -7,5 +7,7 @@ build
 *.el
 
 run_bench/normal_run/graph_dir
+run_bench/normal_run/cifar100/data
 run_bench/playground
 run_bench/vtune_log
+dl/train_data_batch_1

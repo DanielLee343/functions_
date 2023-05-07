@@ -12,6 +12,7 @@ VTUNE = "/opt/intel/oneapi/vtune/2023.1.0/bin64/vtune"
 PROF_DIR_BASE= "/home/cc/functions/run_bench/vtune_log"
 
 def main():
+
     algo = sys.argv[1]
     size = sys.argv[2]
     run_vtune = sys.argv[3]
@@ -37,7 +38,7 @@ def main():
     check_pid = str(os.getpid())
     if get_heatmap == "true":
         damo_trace = "/home/cc/functions/run_bench/playground/"+ algo + "_" + size + "/" + algo + "_" + size + ".data"
-        subprocess.Popen(["sudo","damo","record", "--monitoring_nr_regions_range", "1000", "2000", "-o", 
+        subprocess.Popen(["sudo","/home/cc/damo/damo","record", "--monitoring_nr_regions_range", "1000", "2000", "-o", 
                         damo_trace, check_pid])
     if run_vtune == "true":
         PROF_DIR = os.path.join(PROF_DIR_BASE, algo + "_" + size)
@@ -46,6 +47,8 @@ def main():
         subprocess.Popen([VTUNE, "-collect", "uarch-exploration", "-r", 
                           PROF_DIR, "-target-pid", check_pid])
     process_begin = time()
+    cur_nanosec = int((process_begin - int(process_begin)) * 1e9)
+    print("start computing from: {}.{}".format(int(process_begin), cur_nanosec))
 
     if algo == 'pagerank':
         result = graph.pagerank()

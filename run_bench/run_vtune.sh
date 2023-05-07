@@ -2,6 +2,9 @@
 
 PLAYGROUND_DIR=/home/cc/functions/run_bench/playground
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+TWITTER_BIG=/home/cc/functions/run_bench/normal_run/graph_dir/twitter_rv.el
+TWITTER_WHOLE=/home/cc/gapbs/benchmark/graphs/twitter.sg
+DAMO=/home/cc/damo/damo
 gen_rss() 
 {
     local check_pid=$1
@@ -60,21 +63,28 @@ gen_heatmap()
     local do_run_damo=$3
     # check if region range is good
     DEMO_FILE=$PLAYGROUND_DIR/$workload_name/"$workload_name".data
+    echo "DAMO_FILE: " $DEMO_FILE
     if [ "$do_run_damo" = true ]; then
-        sudo damo record --monitoring_nr_regions_range 1000 2000 \
+        sudo $DAMO record --monitoring_nr_regions_range 1000 2000 \
             -o $DEMO_FILE $check_pid
     fi
     echo "processig damo..."
-    sudo damo report raw -i $DEMO_FILE \
-        > $PLAYGROUND_DIR/$workload_name/"$workload_name".txt
-    sudo damo report heats -i $DEMO_FILE \
-        --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png
-    sudo damo report wss -i $DEMO_FILE \
-        --all_wss > $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.txt
-    sudo damo report wss -i $DEMO_FILE \
+    # sudo $DAMO report raw -i $DEMO_FILE \
+    #     > $PLAYGROUND_DIR/$workload_name/"$workload_name".txt &
+    sudo $DAMO report heats -i $DEMO_FILE \
+        --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png &
+    sudo $DAMO report wss -i $DEMO_FILE \
         --sortby time \
         --range 0 100 1 \
-        --plot $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.png
+        --plot $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.png &
+    sudo $DAMO report wss -i $DEMO_FILE \
+        --all_wss > $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.txt &
+    sudo $DAMO report heats -i $DEMO_FILE \
+        --abs_addr > $PLAYGROUND_DIR/$workload_name/abs_addr.txt &
+    while [ ! -z "$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)" ]
+    do
+        sleep 1
+    done
     sudo chown -R $(whoami) $PLAYGROUND_DIR/$workload_name/*
     python /home/cc/functions/run_bench/get_bw_wss_stat.py $workload_name wss
     echo "plot wss and heatmap done"
@@ -92,7 +102,7 @@ run_workload()
     get_rss=true
     get_bw=true
     get_heatmap=true
-    run_vtune=true
+    run_vtune=false
     if [ ! -z $wl_args ]; then
         wl_folder="$func"_"$wl_args"
     else
@@ -100,17 +110,13 @@ run_workload()
     fi
     echo "folder name in playground:" $wl_folder
 
-    if [ ! -d "$PLAYGROUND_DIR/$wl_folder" ]; then
-        # echo "does not exists"
-        mkdir -p $PLAYGROUND_DIR/$wl_folder
-    else
-        rm -rf $PLAYGROUND_DIR/$wl_folder/*
-    fi
     echo "running $func in $env"
     if [ "$env" = "cxl" ]; then
         cmd_prefix="numactl --cpunodebind 0 --membind 1 -- "
     elif [ "$env" = "base" ]; then
         cmd_prefix="numactl --cpunodebind 0 --membind 0 -- "
+    elif [ "$env" = "cpu0" ]; then
+        cmd_prefix="numactl --cpunodebind 0 -- "
     elif [ "$env" = "org" ]; then
         cmd_prefix=""
     else
@@ -124,7 +130,7 @@ run_workload()
     elif [ "$func" = "img_proc" ]; then
         workload_cmd="python /home/cc/functions/run_bench/normal_run/img_proc/img_proc.py 191mb"
     elif [ "$func" = "matmul_go" ]; then
-        workload_cmd="matmul 13000"
+        workload_cmd="matmul 12000"
     elif [ "$func" = "linpack_go" ]; then
         workload_cmd="linpack 7000"
     elif [ "$func" = "pagerank" ]; then
@@ -146,6 +152,7 @@ run_workload()
         workload_cmd="python /home/cc/functions/run_bench/normal_run/watermark/watermark.py concat to_gif"
     elif [ "$func" = "watermark" ]; then
         workload_cmd="python /home/cc/functions/run_bench/normal_run/watermark/watermark.py 137_4k watermark"
+
     elif [ "$func" = "resnet18_train" ]; then
         workload_cmd="python /home/cc/bm_test/cifar100/cifar100.py train resnet18 50000"
     elif [ "$func" = "squeezenet_train" ]; then
@@ -166,28 +173,59 @@ run_workload()
         workload_cmd="python /home/cc/bm_test/cifar100/cifar100.py serve squeezenet 10000"
     elif [ "$func" = "vgg16_serve" ]; then
         workload_cmd="python /home/cc/bm_test/cifar100/cifar100.py serve vgg16 10000"
+    elif [ "$func" = "dl_cifar100_resnet50_128" ]; then
+        workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 5 -d cifar100 -m resnet50 -b 128 -hm -vtune"
+    elif [ "$func" = "dl_cifar100_resnet50_32" ]; then
+        workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 5 -d cifar100 -m resnet50 -b 32 -hm -vtune"
+    elif [ "$func" = "dl_cifar100_resnet152_128" ]; then
+        workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 5 -d cifar100 -m resnet152 -b 128 -hm -vtune"
+    elif [ "$func" = "dl_cifar10_mobilenet_128" ]; then
+        workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 1 -d cifar10 -m mobilenet -b 128 -hm -vtune"
+    elif [ "$func" = "dl_downsample_imagenet_resnet50_128" ]; then
+        workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 1 -d downsample_imagenet -m resnet50 -b 128 -hm -vtune"
 
-    # elif [ "$func" = "reddit_5k" ]; then
-    #     workload_cmd="python /home/cc/tudataset/tud_benchmark/unit_test.py REDDIT-MULTI-5K"
-    # elif [ "$func" = "FRANKENSTEIN" ]; then
-    #     workload_cmd="python /home/cc/tudataset/tud_benchmark/unit_test.py FRANKENSTEIN"
-    # elif [ "$func" = "COLLAB" ]; then
-    #     workload_cmd="python /home/cc/tudataset/tud_benchmark/unit_test.py COLLAB"
-    # elif [ "$func" = "Fingerprint" ]; then
-    #     workload_cmd="python /home/cc/tudataset/tud_benchmark/unit_test.py Fingerprint"
-    # elif [ "$func" = "NCI1" ]; then
-    #     workload_cmd="python /home/cc/tudataset/tud_benchmark/unit_test.py NCI1"
-    # elif [ "$func" = "DD" ]; then
-    #     workload_cmd="python /home/cc/tudataset/tud_benchmark/unit_test.py DD"
+    elif [ "$func" = "gapbs_bfs_23" ]; then
+        cd ~/gapbs
+        make
+        cd
+        workload_cmd="/home/cc/gapbs/bfs -g 23 -n 200 -d"
+    # elif [ "$func" = "gapbs_bfs_twitter" ]; then
+    #     cd ~/gapbs
+    #     make
+    #     cd
+    #     workload_cmd="/home/cc/gapbs/bfs -f $TWITTER_BIG -n 50 -d"
+    elif [ "$func" = "gapbs_bfs_twitter_whole" ]; then
+        cd ~/gapbs
+        make
+        cd
+        workload_cmd="/home/cc/gapbs/bfs -f $TWITTER_WHOLE -n 50 -d"
+    elif [ "$func" = "gapbs_pr_twitter_whole" ]; then
+        cd ~/gapbs
+        make
+        cd
+        workload_cmd="/home/cc/gapbs/pr -f $TWITTER_WHOLE -i1000 -t1e-4 -n2 -d"
     else
         echo "wrong workload"; exit 1
     fi
+    echo "playground: " $PLAYGROUND_DIR/$wl_folder
+    if [ ! -d "$PLAYGROUND_DIR/$wl_folder" ]; then
+        echo "creating folder" $PLAYGROUND_DIR/$wl_folder
+        mkdir -p $PLAYGROUND_DIR/$wl_folder
+    else
+        echo "deleting everything inside folders" $PLAYGROUND_DIR/$wl_folder/*
+        rm -rf $PLAYGROUND_DIR/$wl_folder/*
+    fi
+    # echo "check now!!"
+    # sleep 20
     # delete & if doing vtune, otherwise vtune doesn't know when to stop
+    export OMP_NUM_THREADS=8
+    export LD_PRELOAD=/home/cc/syscall_intercept/test/example.so 
     $cmd_prefix $workload_cmd &
     check_pid=$!
     if [ "$check_pid" = "" ]; then
         echo "unable to get wl pid, something is wrong"; exit 1
     fi
+    unset LD_PRELOAD
     # if [ "$run_vtune" = true ] ; then
     #     if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ] || [ "$func" = "biconnect" ]; then
     #         vtune_pid=$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)
@@ -200,7 +238,9 @@ run_workload()
 
     # run_trace_prefix="numactl --cpunodebind 1 -- "
     if [ "$get_rss" = true ] ; then
-        if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ] || [ "$func" = "biconnect" ]; then
+        if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ] || [ "$func" = "biconnect" ] \
+        || [[ $func == "dl_"* ]] || [[ $func == "gapbs_"* ]]; then
+            echo "waiting for damo to start1"
             perf_record_pid=$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)
             if [ ! -z $perf_record_pid ]; then
                 echo "killing $perf_record_pid"
@@ -217,19 +257,25 @@ run_workload()
         fi
     fi
     if [ "$get_bw" = true ]; then
-        if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ]; then
-            while [ -z "$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)" ]
-            do
-                sleep 0.1
-            done
-            echo "found damo, start gen_bw"
-            gen_bw $check_pid $wl_folder &
-        else
-            gen_bw $check_pid $wl_folder &
-        fi
+        # if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ] || [ "$func" = "biconnect" ] \
+        # || [[ $func == "dl_"* ]] || [[ $func == "gapbs_"* ]]; then
+        #     echo "waiting for damo to start2"
+        #     while [ -z "$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)" ]
+        #     do
+        #         sleep 0.1
+        #     done
+        #     echo "found damo, start gen_bw"
+        #     gen_bw $check_pid $wl_folder &
+        # else
+        #     echo "shouldn't be here"
+        #     gen_bw $check_pid $wl_folder &
+        # fi
+        gen_bw $check_pid $wl_folder &
     fi
     if [ "$get_heatmap" = true ]; then
-        if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ] || [ "$func" = "biconnect" ]; then
+        if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ] || [ "$func" = "biconnect" ] \
+        || [[ $func == "dl_"* ]] || [[ $func == "gapbs_"* ]]; then
+            echo "waiting for damo to start3"
             # while [ -z "$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)" ]
             # do
             #     echo "waiting for damo to start..."
@@ -239,9 +285,9 @@ run_workload()
             while [ -d "/proc/${check_pid}" ]
             do
                 # echo "damo, or wl still running..."
-                sleep 0.1
+                sleep 1
             done
-            sleep 3
+            sleep 4
             gen_heatmap $check_pid $wl_folder false &
         else
             gen_heatmap $check_pid $wl_folder true &
@@ -253,3 +299,4 @@ run_workload()
 # $2: function to run <chameleon>
 echo 1 | sudo tee /proc/sys/vm/drop_caches
 run_workload $1 $2 $3
+# gen_heatmap any biconnect_twitter_rv false
