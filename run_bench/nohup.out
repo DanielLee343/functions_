@@ -1,0 +1,408 @@
+1
+running chameleon in base
+[ perf record: Woken up 1584 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 267720 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 267722 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 400.770 MB /home/cc/functions/run_bench/playground/chameleon/chameleon.data (3648790 samples) ]
+pid: 
+1
+running chameleon in interleave
+[ perf record: Woken up 1607 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 279141 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 279142 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 406.189 MB /home/cc/functions/run_bench/playground/chameleon/chameleon.data (3697471 samples) ]
+pid: 
+1
+running chameleon in cxl
+[ perf record: Woken up 1629 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 290823 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 290825 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 411.506 MB /home/cc/functions/run_bench/playground/chameleon/chameleon.data (3746938 samples) ]
+pid: 
+1
+running para_comp in base
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 302592 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Woken up 2112 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 302591 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 531.296 MB /home/cc/functions/run_bench/playground/para_comp/para_comp.data (4873214 samples) ]
+pid: 
+1
+running para_comp in interleave
+[ perf record: Woken up 2073 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 312939 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 312940 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 521.774 MB /home/cc/functions/run_bench/playground/para_comp/para_comp.data (4785943 samples) ]
+pid: 
+1
+running para_comp in cxl
+[ perf record: Woken up 2116 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 323118 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 323119 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 532.263 MB /home/cc/functions/run_bench/playground/para_comp/para_comp.data (4882375 samples) ]
+pid: 
+1
+running img_proc in base
+[ perf record: Woken up 1549 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 333492 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 333490 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 393.345 MB /home/cc/functions/run_bench/playground/img_proc/img_proc.data (3598398 samples) ]
+pid: 
+1
+running img_proc in interleave
+[ perf record: Woken up 1396 times to write data ]
+[ perf record: Captured and wrote 354.992 MB /home/cc/functions/run_bench/playground/img_proc/img_proc.data (3239516 samples) ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 342482 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 342481 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+1
+running img_proc in cxl
+[ perf record: Woken up 1461 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 351710 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 351712 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 371.292 MB /home/cc/functions/run_bench/playground/img_proc/img_proc.data (3389003 samples) ]
+pid: 
+1
+running matmul_go in base
+[ perf record: Woken up 1777 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 361182 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 361181 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 476.992 MB /home/cc/functions/run_bench/playground/matmul_go/matmul_go.data (4380957 samples) ]
+pid: 
+1
+running matmul_go in interleave
+[ perf record: Woken up 1822 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 369803 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 369800 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 489.087 MB /home/cc/functions/run_bench/playground/matmul_go/matmul_go.data (4491823 samples) ]
+pid: 
+1
+running matmul_go in cxl
+[ perf record: Woken up 1868 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 378619 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 378617 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+Warning:
+Processed 4885464 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 502.003 MB /home/cc/functions/run_bench/playground/matmul_go/matmul_go.data (4610612 samples) ]
+pid: 
+1
+running linpack_go in base
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 387647 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Woken up 6540 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 387646 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 1755.762 MB /home/cc/functions/run_bench/playground/linpack_go/linpack_go.data (16135870 samples) ]
+pid: 
+1
+running linpack_go in interleave
+[ perf record: Woken up 7855 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 417615 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 417617 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+Warning:
+Processed 20517229 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 2108.886 MB /home/cc/functions/run_bench/playground/linpack_go/linpack_go.data (19385782 samples) ]
+pid: 
+1
+running linpack_go in cxl
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 453118 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Woken up 9270 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 453120 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+Warning:
+Processed 24188624 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 2485.803 MB /home/cc/functions/run_bench/playground/linpack_go/linpack_go.data (22847212 samples) ]
+pid: 
+1
+running gif in base
+[ perf record: Woken up 1857 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 495283 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 495285 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+Warning:
+Processed 6122423 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 626.573 MB /home/cc/functions/run_bench/playground/gif/gif.data (5771196 samples) ]
+pid: 
+1
+running gif in interleave
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 504362 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Woken up 2083 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 504360 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 705.616 MB /home/cc/functions/run_bench/playground/gif/gif.data (6499201 samples) ]
+pid: 
+1
+running gif in cxl
+[ perf record: Woken up 2324 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 514493 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 514492 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+Warning:
+Processed 7684461 events and lost 2 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 786.047 MB /home/cc/functions/run_bench/playground/gif/gif.data (7241243 samples) ]
+pid: 
+1
+running watermark in base
+[ perf record: Woken up 1377 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 525657 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 525659 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 465.058 MB /home/cc/functions/run_bench/playground/watermark/watermark.data (4282282 samples) ]
+pid: 
+1
+running watermark in interleave
+[ perf record: Woken up 1424 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 532622 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 532621 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+Warning:
+Processed 4712845 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 482.050 MB /home/cc/functions/run_bench/playground/watermark/watermark.data (4438584 samples) ]
+pid: 
+1
+running watermark in cxl
+[ perf record: Woken up 1471 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 539812 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 539814 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 497.931 MB /home/cc/functions/run_bench/playground/watermark/watermark.data (4585452 samples) ]
+pid: 
+1
+running dl_cifar100_resnet50_128 in base
+2023-05-23 07:26:41.898193: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 3711 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 548247 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 548250 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+Warning:
+Processed 17860603 events and lost 2 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 1823.240 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet50_128/dl_cifar100_resnet50_128.data (16862651 samples) ]
+1
+running dl_cifar100_resnet50_128 in interleave
+2023-05-23 07:30:14.824764: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 4133 times to write data ]
+0x308 [0x1d7]: failed to process type: 0 [Bad address]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 565683 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 565686 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 1991.041 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet50_128/dl_cifar100_resnet50_128.data ]
+pid: 
+1
+running dl_cifar100_resnet50_128 in cxl
+2023-05-23 07:34:09.319991: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 4673 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 586699 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 586696 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+Warning:
+Processed 21929788 events and lost 3 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 2250.922 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet50_128/dl_cifar100_resnet50_128.data (20826501 samples) ]
+1
+running dl_cifar100_resnet50_32 in base
+2023-05-23 07:38:30.276411: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 6305 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 610053 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 610050 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+Warning:
+Processed 29754352 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 3037.454 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet50_32/dl_cifar100_resnet50_32.data (28092483 samples) ]
+1
+running dl_cifar100_resnet50_32 in interleave
+2023-05-23 07:44:12.944132: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 6295 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 640759 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 640762 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+Warning:
+Processed 30401597 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 3110.285 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet50_32/dl_cifar100_resnet50_32.data (28775052 samples) ]
+1
+running dl_cifar100_resnet50_32 in cxl
+2023-05-23 07:49:54.721969: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 6859 times to write data ]
+0x308 [0x1d7]: failed to process type: 0 [Bad address]
+[ perf record: Captured and wrote 3307.312 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet50_32/dl_cifar100_resnet50_32.data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 671608 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 671605 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+1
+running dl_cifar100_resnet152_128 in base
+2023-05-23 07:56:03.617974: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 9171 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 704803 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 704800 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+1
+running dl_cifar100_resnet152_128 in interleave
+Warning:
+Processed 43161988 events and lost 3 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 4409.380 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet152_128/dl_cifar100_resnet152_128.data (40784017 samples) ]
+2023-05-23 08:04:14.042632: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/usr/local/bin/damo", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.8/dist-packages/damo/damo.py", line 94, in main
+    subcmd.execute(args)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damo_subcmds.py", line 31, in execute
+    self.module.main(args)
+  File "/usr/local/lib/python3.8/dist-packages/damo/damo_record.py", line 153, in main
+    cleanup_exit(0)
+  File "/usr/local/lib/python3.8/dist-packages/damo/damo_record.py", line 38, in cleanup_exit
+    _damon_result.stop_monitoring_record(data_for_cleanup.perf_pipe)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damon_result.py", line 423, in stop_monitoring_record
+    err = update_result_file(file_path, file_format)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damon_result.py", line 330, in update_result_file
+    result, err = parse_damon_result(file_path)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damon_result.py", line 243, in parse_damon_result
+    result, err = record_to_damon_result(result_file)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damon_result.py", line 113, in record_to_damon_result
+    with open(file_path, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/cc/functions/run_bench/playground/dl_cifar100_resnet152_128/dl_cifar100_resnet152_128.data'
+[ perf record: Woken up 9143 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 749029 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 749032 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+1
+Warning:
+Processed 42968689 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 4399.957 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet152_128/dl_cifar100_resnet152_128.data (40705643 samples) ]
+running dl_cifar100_resnet152_128 in cxl
+2023-05-23 08:12:19.896388: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Traceback (most recent call last):
+  File "/usr/local/bin/damo", line 8, in <module>
+    sys.exit(main())
+  File "/usr/local/lib/python3.8/dist-packages/damo/damo.py", line 94, in main
+    subcmd.execute(args)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damo_subcmds.py", line 31, in execute
+    self.module.main(args)
+  File "/usr/local/lib/python3.8/dist-packages/damo/damo_record.py", line 153, in main
+    cleanup_exit(0)
+  File "/usr/local/lib/python3.8/dist-packages/damo/damo_record.py", line 38, in cleanup_exit
+    _damon_result.stop_monitoring_record(data_for_cleanup.perf_pipe)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damon_result.py", line 423, in stop_monitoring_record
+    err = update_result_file(file_path, file_format)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damon_result.py", line 330, in update_result_file
+    result, err = parse_damon_result(file_path)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damon_result.py", line 243, in parse_damon_result
+    result, err = record_to_damon_result(result_file)
+  File "/usr/local/lib/python3.8/dist-packages/damo/_damon_result.py", line 113, in record_to_damon_result
+    with open(file_path, 'rb') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/cc/functions/run_bench/playground/dl_cifar100_resnet152_128/dl_cifar100_resnet152_128.data'
+[ perf record: Woken up 9853 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 792833 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 792829 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+1
+running dl_cifar10_mobilenet_128 in base
+Warning:
+Processed 47135511 events and lost 4 chunks!
+
+Check IO/CPU overload!
+
+Warning:
+1 out of order events recorded.
+[ perf record: Captured and wrote 4836.594 MB /home/cc/functions/run_bench/playground/dl_cifar100_resnet152_128/dl_cifar100_resnet152_128.data (44761392 samples) ]
+2023-05-23 08:21:00.713769: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 992 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 839741 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 839744 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 529.553 MB /home/cc/functions/run_bench/playground/dl_cifar10_mobilenet_128/dl_cifar10_mobilenet_128.data (4896192 samples) ]
+pid: 
+1
+running dl_cifar10_mobilenet_128 in interleave
+2023-05-23 08:22:24.809624: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 1079 times to write data ]
+0x308 [0x217]: failed to process type: 0 [Bad address]
+[ perf record: Captured and wrote 575.519 MB /home/cc/functions/run_bench/playground/dl_cifar10_mobilenet_128/dl_cifar10_mobilenet_128.data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 847184 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 847187 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+1
+running dl_cifar10_mobilenet_128 in cxl
+2023-05-23 08:23:47.633834: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 1237 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 854434 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 854436 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+Warning:
+Processed 6460157 events and lost 1 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 661.650 MB /home/cc/functions/run_bench/playground/dl_cifar10_mobilenet_128/dl_cifar10_mobilenet_128.data (6121733 samples) ]
+pid: 
+1
+running dl_downsample_imagenet_resnet50_128 in base
+2023-05-23 08:25:18.138831: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 7618 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 862406 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 862402 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+Warning:
+Processed 31419274 events and lost 7 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 3216.069 MB /home/cc/functions/run_bench/playground/dl_downsample_imagenet_resnet50_128/dl_downsample_imagenet_resnet50_128.data (29711936 samples) ]
+1
+running dl_downsample_imagenet_resnet50_128 in interleave
+2023-05-23 08:32:41.573838: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 8644 times to write data ]
+0x308 [0x802]: failed to process type: 0 [Bad address]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 902313 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 902310 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+[ perf record: Captured and wrote 3643.429 MB /home/cc/functions/run_bench/playground/dl_downsample_imagenet_resnet50_128/dl_downsample_imagenet_resnet50_128.data ]
+pid: 
+1
+running dl_downsample_imagenet_resnet50_128 in cxl
+2023-05-23 08:41:01.714631: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[ perf record: Woken up 9471 times to write data ]
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 947417 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+/home/cc/functions/run_bench/run_vtune.sh: line 38: 947420 Killed                  sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent
+pid: 
+Warning:
+Processed 37880717 events and lost 6 chunks!
+
+Check IO/CPU overload!
+
+[ perf record: Captured and wrote 3899.764 MB /home/cc/functions/run_bench/playground/dl_downsample_imagenet_resnet50_128/dl_downsample_imagenet_resnet50_128.data (36040049 samples) ]

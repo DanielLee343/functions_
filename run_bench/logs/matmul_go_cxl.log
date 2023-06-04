@@ -1,0 +1,20 @@
+folder name in playground: matmul_go
+running matmul_go in cxl
+playground:  /home/cc/functions/run_bench/playground/matmul_go
+deleting everything inside folders /home/cc/functions/run_bench/playground/matmul_go/matmul_go.data /home/cc/functions/run_bench/playground/matmul_go/matmul_go_bw.csv /home/cc/functions/run_bench/playground/matmul_go/matmul_go_bw.png /home/cc/functions/run_bench/playground/matmul_go/matmul_go_bw_cdf.png /home/cc/functions/run_bench/playground/matmul_go/matmul_go_bw_raw.csv /home/cc/functions/run_bench/playground/matmul_go/matmul_go_rss.csv /home/cc/functions/run_bench/playground/matmul_go/matmul_go_rss.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/matmul_go/matmul_go.data
+86.06
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for matmul_go is 108.35
+Median BW of sock1 for matmul_go is 4043.67
+Max BW of sock0 for matmul_go is 487.07
+Max BW of sock1 for matmul_go is 6777.17
+Median BW of sock0 for matmul_go is 108.35
+Median BW of sock1 for matmul_go is 4043.67
+Max BW of sock0 for matmul_go is 487.07
+Max BW of sock1 for matmul_go is 6777.17
+Press Ctrl+C to stop
+processig damo...

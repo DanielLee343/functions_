@@ -1,0 +1,20 @@
+folder name in playground: img_proc
+running img_proc in cxl
+playground:  /home/cc/functions/run_bench/playground/img_proc
+deleting everything inside folders /home/cc/functions/run_bench/playground/img_proc/img_proc.data /home/cc/functions/run_bench/playground/img_proc/img_proc_bw.csv /home/cc/functions/run_bench/playground/img_proc/img_proc_bw.png /home/cc/functions/run_bench/playground/img_proc/img_proc_bw_cdf.png /home/cc/functions/run_bench/playground/img_proc/img_proc_bw_raw.csv /home/cc/functions/run_bench/playground/img_proc/img_proc_rss.csv /home/cc/functions/run_bench/playground/img_proc/img_proc_rss.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/img_proc/img_proc.data
+97.04
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for img_proc is 113.52
+Median BW of sock1 for img_proc is 947.6
+Max BW of sock0 for img_proc is 774.38
+Max BW of sock1 for img_proc is 5419.64
+Median BW of sock0 for img_proc is 113.52
+Median BW of sock1 for img_proc is 947.6
+Max BW of sock0 for img_proc is 774.38
+Max BW of sock1 for img_proc is 5419.64
+Press Ctrl+C to stop
+processig damo...

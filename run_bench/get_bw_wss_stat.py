@@ -7,7 +7,9 @@ from matplotlib import pyplot as plt
 CUR_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 
 def get_bw_stat(func_trace_dir, func):
-    cur_df = pd.read_csv(os.path.join(func_trace_dir, func + "_bw.csv"))
+    file=os.path.join(func_trace_dir, func + "_bw.csv")
+    # file="/home/cc/functions/run_bench/interference/3_3_bw.csv"
+    cur_df = pd.read_csv(file)
     cur_skt_0_mem = cur_df.iloc[:, 1] # column for Memory (MB/s) for sock0, 13
     cur_skt_1_mem = cur_df.iloc[:, 2]
     cur_skt_0_mem = cur_skt_0_mem.tolist()
@@ -20,20 +22,20 @@ def get_bw_stat(func_trace_dir, func):
     # plot cdf of bw
     # plt.rcParams.update(plt.rcParamsDefault)
     # plt.rcParams["figure.autolayout"] = True
-    skt_0_x = np.sort(cur_skt_0_mem)
-    skt_0_y = np.arange(1, len(skt_0_x) + 1) / len(skt_0_x)
-    skt_1_x = np.sort(cur_skt_1_mem)
-    skt_1_y = np.arange(1, len(skt_1_x) + 1) / len(skt_1_x)
-    fig, ax = plt.subplots()
-    ax.plot(skt_0_x, skt_0_y, label='sock 0')
-    ax.plot(skt_1_x, skt_1_y, label='sock 1')
-    ax.set_xlabel('Mmeory Bandwidth (MB/s)')
-    ax.set_ylabel('CDF')
-    ax.legend()
-    ax.set_title('CDF of {}'.format(func))
-    # plt.grid(False)
-    output_cdf = os.path.join(func_trace_dir, func + "_bw_cdf.png")
-    plt.savefig(output_cdf)
+    # skt_0_x = np.sort(cur_skt_0_mem)
+    # skt_0_y = np.arange(1, len(skt_0_x) + 1) / len(skt_0_x)
+    # skt_1_x = np.sort(cur_skt_1_mem)
+    # skt_1_y = np.arange(1, len(skt_1_x) + 1) / len(skt_1_x)
+    # fig, ax = plt.subplots()
+    # ax.plot(skt_0_x, skt_0_y, label='sock 0')
+    # ax.plot(skt_1_x, skt_1_y, label='sock 1')
+    # ax.set_xlabel('Mmeory Bandwidth (MB/s)')
+    # ax.set_ylabel('CDF')
+    # ax.legend()
+    # ax.set_title('CDF of {}'.format(func))
+    # # plt.grid(False)
+    # output_cdf = os.path.join(func_trace_dir, func + "_bw_cdf.png")
+    # plt.savefig(output_cdf)
 
 def gen_wss_cdf(func_trace_dir, func):
     # plt.rcParams.update(plt.rcParamsDefault)

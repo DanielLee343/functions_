@@ -1,0 +1,56 @@
+folder name in playground: gapbs_pr_twitter_whole
+running gapbs_pr_twitter_whole in interleave
+make: Nothing to be done for 'all'.
+playground:  /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole
+deleting everything inside folders /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole/gapbs_pr_twitter_whole.data /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole/gapbs_pr_twitter_whole_bw.csv /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole/gapbs_pr_twitter_whole_bw.png /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole/gapbs_pr_twitter_whole_bw_cdf.png /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole/gapbs_pr_twitter_whole_bw_raw.csv /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole/gapbs_pr_twitter_whole_rss.csv /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole/gapbs_pr_twitter_whole_rss.png
+waiting for damo to start1
+whole start at: 1684873595.265521339
+killing 1068975
+found damo, start gen_rss
+waiting for damo to start2
+found damo, start gen_bw
+waiting for damo to start3
+index: 0 ; 0
+index: 0 ; 0
+Read Time:           38.73090
+graph addr: 0x7fffffffdbc0
+graph size: 56
+get into do damo
+computing start at: 1684873634.216221149
+Graph has 61578415 nodes and 1468364884 directed edges for degree: 23
+running damo 
+scores addr: 0x7fffffffdba0
+scores size: 24
+outgoing_contrib addr: 0x7fffffffdac0
+outgoing_contrib size: 24
+scores addr: 0x7fffffffdba0
+scores size: 24
+outgoing_contrib addr: 0x7fffffffdac0
+outgoing_contrib size: 24
+scores addr: 0x7fffffffdba0
+scores size: 24
+outgoing_contrib addr: 0x7fffffffdac0
+outgoing_contrib size: 24
+scores addr: 0x7fffffffdba0
+scores size: 24
+outgoing_contrib addr: 0x7fffffffdac0
+outgoing_contrib size: 24
+Total Compute Time:  141.97703
+all finish at: 1684873776.289729579
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for gapbs_pr_twitter_whole is 11621.48
+Median BW of sock1 for gapbs_pr_twitter_whole is 11758.84
+Max BW of sock0 for gapbs_pr_twitter_whole is 25676.39
+Max BW of sock1 for gapbs_pr_twitter_whole is 18649.0
+Median BW of sock0 for gapbs_pr_twitter_whole is 11621.48
+Median BW of sock1 for gapbs_pr_twitter_whole is 11758.84
+Max BW of sock0 for gapbs_pr_twitter_whole is 25676.39
+Max BW of sock1 for gapbs_pr_twitter_whole is 18649.0
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/gapbs_pr_twitter_whole/gapbs_pr_twitter_whole.data
+processig damo...
+damo finished 
+Press Ctrl+C to stop
+converting format from perf_data to record failed (snapshot reading failead: unpack requires a buffer of 8 bytes)

@@ -1,0 +1,18 @@
+folder name in playground: gapbs_bfs_23
+running gapbs_bfs_23 in cxl
+make: Nothing to be done for 'all'.
+playground:  /home/cc/functions/run_bench/playground/gapbs_bfs_23
+deleting everything inside folders /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_bw.csv /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_bw.png /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_bw_raw.csv /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_rss.csv /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_rss.png
+waiting for damo to start1
+whole start at: 1685392930.712491208
+Generate Time:       7.72906
+neighs: 0x7fff6e1fe010 ; 140735040970768
+index: 0 ; 0
+Build Time:          8.02118
+sq_neighs: 0x7fff2c738010 ; 140733939154960
+index: 0 ; 0
+get into do damo
+computing start at: 1685392948.533850324
+Graph has 8388607 nodes and 129337750 undirected edges for degree: 15
+running damo 
+Press Ctrl+C to stop

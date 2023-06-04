@@ -1,0 +1,21 @@
+folder name in playground: watermark
+running watermark in interleave
+playground:  /home/cc/functions/run_bench/playground/watermark
+deleting everything inside folders /home/cc/functions/run_bench/playground/watermark/watermark.data /home/cc/functions/run_bench/playground/watermark/watermark_bw.csv /home/cc/functions/run_bench/playground/watermark/watermark_bw.png /home/cc/functions/run_bench/playground/watermark/watermark_bw_cdf.png /home/cc/functions/run_bench/playground/watermark/watermark_bw_raw.csv /home/cc/functions/run_bench/playground/watermark/watermark_rss.csv /home/cc/functions/run_bench/playground/watermark/watermark_rss.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/watermark/watermark.data
+/home/cc/functions/run_bench/normal_run/watermark/processed-137_4k.mp4
+71.71
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for watermark is 5731.59
+Median BW of sock1 for watermark is 7650.13
+Max BW of sock0 for watermark is 8871.96
+Max BW of sock1 for watermark is 11828.57
+Median BW of sock0 for watermark is 5731.59
+Median BW of sock1 for watermark is 7650.13
+Max BW of sock0 for watermark is 8871.96
+Max BW of sock1 for watermark is 11828.57
+Press Ctrl+C to stop
+processig damo...

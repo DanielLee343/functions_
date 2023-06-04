@@ -1,0 +1,20 @@
+folder name in playground: para_comp
+running para_comp in base
+playground:  /home/cc/functions/run_bench/playground/para_comp
+deleting everything inside folders /home/cc/functions/run_bench/playground/para_comp/para_comp.data /home/cc/functions/run_bench/playground/para_comp/para_comp.png /home/cc/functions/run_bench/playground/para_comp/para_comp.txt /home/cc/functions/run_bench/playground/para_comp/para_comp_bw.csv /home/cc/functions/run_bench/playground/para_comp/para_comp_bw.png /home/cc/functions/run_bench/playground/para_comp/para_comp_bw_cdf.png /home/cc/functions/run_bench/playground/para_comp/para_comp_bw_raw.csv /home/cc/functions/run_bench/playground/para_comp/para_comp_rss.csv /home/cc/functions/run_bench/playground/para_comp/para_comp_rss.png /home/cc/functions/run_bench/playground/para_comp/para_comp_wss.png /home/cc/functions/run_bench/playground/para_comp/para_comp_wss.txt /home/cc/functions/run_bench/playground/para_comp/para_comp_wss_cdf.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/para_comp/para_comp.data
+108.14
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for para_comp is 63.239999999999995
+Median BW of sock1 for para_comp is 119.255
+Max BW of sock0 for para_comp is 590.19
+Max BW of sock1 for para_comp is 1857.65
+Median BW of sock0 for para_comp is 63.239999999999995
+Median BW of sock1 for para_comp is 119.255
+Max BW of sock0 for para_comp is 590.19
+Max BW of sock1 for para_comp is 1857.65
+Press Ctrl+C to stop
+processig damo...

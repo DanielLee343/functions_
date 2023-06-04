@@ -3,7 +3,13 @@ init_memory = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024
 initTime = time.time()
 print("MAKESPAN ::> Code deployed -> Time = {0}.s | Memory = {1}.MB".format(time.time()-initTime, resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024))
 import numpy as np # linear algebra
-import os, sys, logging, json, shutil, pickle, lasagne
+try:
+    np.distutils.__config__.blas_opt_info = np.distutils.system_info.blas_opt_info
+except Exception:
+    print("cannot")
+    pass
+import os, sys, logging, json, shutil, pickle
+# import lasagne
 import tensorflow_datasets as tfds
 import subprocess
 from tensorflow.keras.utils import to_categorical
@@ -18,6 +24,7 @@ from tensorflow.keras import callbacks
 from tensorflow.keras.utils import get_file
 from tensorflow.keras.preprocessing.image import img_to_array, array_to_img
 import tensorflow as tf
+import datetime
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 logging.getLogger("tensorflow").setLevel(logging.CRITICAL)
@@ -184,7 +191,8 @@ def load_imagenet(data_folder, idx, img_size=64):
     Y_train = np.concatenate((Y_train, Y_train_flip), axis=0)
 
     return dict(
-        X_train=lasagne.utils.floatX(X_train),
+        X_train = X_train.astype('float32'),
+        # X_train=lasagne.utils.floatX(X_train),
         Y_train=Y_train.astype('int32'),
         mean=mean_image)
 
@@ -306,7 +314,8 @@ def run_transfer(params):
         damo_trace = "/home/cc/functions/run_bench/playground/"+ trace_name + "/" + trace_name + ".data"
         print("damo_trace file is: ", damo_trace)
         # time.sleep(5)
-        subprocess.Popen(["sudo","/home/cc/damo/damo","record", "--monitoring_nr_regions_range", "1000", "2000", "-o", 
+        subprocess.Popen(["sudo","damo","record", "-s", "1000", "-a", "100000", "-u",
+                          "1000000", "-n", "5000", "-m", "6000", "-o", 
                         damo_trace, check_pid])
     if  params['vtune'] == True:
         PROF_DIR = os.path.join(PROF_DIR_BASE, trace_name)
@@ -316,8 +325,16 @@ def run_transfer(params):
                           PROF_DIR, "-target-pid", check_pid])
     # Train the model
     train_start = time.time()
-    print((x_train.shape))
+    print(x_train.shape)
     print(y_train.shape)
+    # x_train = x_train[0:20000]
+    # y_train = y_train[0:20000]
     # time.sleep(5)
+    # output_file = open("/home/cc/functions/dl/interfer.log", 'w')
+    # if  params['inference'] != 0:
+    #     for i in range (params['inference']):
+    #         subprocess.Popen(['numactl', '--physcpubind', '12,14,16,18,20,22', '--', 'python', '/home/cc/functions/dl/inference.py', '5'], stdout=output_file)
+    current_time = datetime.datetime.now()
+    print("train start time:", current_time)
     model.fit(x_train, y_train, epochs=NB_EPOCHS, batch_size=BATCH_SIZE)
     print("training_time: {:.2f}".format(time.time() - train_start))

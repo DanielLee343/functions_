@@ -1,0 +1,20 @@
+folder name in playground: linpack_go
+running linpack_go in base
+playground:  /home/cc/functions/run_bench/playground/linpack_go
+deleting everything inside folders /home/cc/functions/run_bench/playground/linpack_go/linpack_go.data /home/cc/functions/run_bench/playground/linpack_go/linpack_go.png /home/cc/functions/run_bench/playground/linpack_go/linpack_go.txt /home/cc/functions/run_bench/playground/linpack_go/linpack_go_bw.csv /home/cc/functions/run_bench/playground/linpack_go/linpack_go_bw.png /home/cc/functions/run_bench/playground/linpack_go/linpack_go_bw_cdf.png /home/cc/functions/run_bench/playground/linpack_go/linpack_go_bw_raw.csv /home/cc/functions/run_bench/playground/linpack_go/linpack_go_rss.csv /home/cc/functions/run_bench/playground/linpack_go/linpack_go_rss.png /home/cc/functions/run_bench/playground/linpack_go/linpack_go_wss.png /home/cc/functions/run_bench/playground/linpack_go/linpack_go_wss.txt /home/cc/functions/run_bench/playground/linpack_go/linpack_go_wss_cdf.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/linpack_go/linpack_go.data
+321.23
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for linpack_go is 8612.835
+Median BW of sock1 for linpack_go is 160.995
+Max BW of sock0 for linpack_go is 13430.64
+Max BW of sock1 for linpack_go is 2168.86
+Median BW of sock0 for linpack_go is 8612.835
+Median BW of sock1 for linpack_go is 160.995
+Max BW of sock0 for linpack_go is 13430.64
+Max BW of sock1 for linpack_go is 2168.86
+Press Ctrl+C to stop
+processig damo...

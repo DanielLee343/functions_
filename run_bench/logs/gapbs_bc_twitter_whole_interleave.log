@@ -1,0 +1,103 @@
+folder name in playground: gapbs_bc_twitter_whole
+running gapbs_bc_twitter_whole in interleave
+make: Nothing to be done for 'all'.
+playground:  /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole
+deleting everything inside folders /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole.data /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_bw.csv /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_bw.png /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_bw_cdf.png /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_bw_raw.csv /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_rss.csv /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_rss.png
+waiting for damo to start1
+whole start at: 1684874890.324864277
+killing 1118808
+found damo, start gen_rss
+waiting for damo to start2
+found damo, start gen_bw
+waiting for damo to start3
+index: 0 ; 0
+index: 0 ; 0
+Read Time:           38.78380
+get into do damo
+computing start at: 1684874929.333707270
+Graph has 61578415 nodes and 1468364884 directed edges for degree: 23
+running damo 
+    a                0.02436
+source: 12441072
+    b                5.37003
+    p                2.73992
+source: 54488257
+    b                5.24596
+    p                2.70503
+source: 25451915
+    b                5.09610
+    p                2.68190
+source: 57714473
+    b                5.22545
+    p                2.73011
+    a                0.02984
+source: 14839494
+    b                5.75465
+    p                2.67807
+source: 32081104
+    b                5.74094
+    p                2.78894
+source: 52957357
+    b                5.11498
+    p                2.71427
+source: 50444380
+    b                5.20497
+    p                2.74410
+    a                0.02982
+source: 49590701
+    b                5.13622
+    p                2.67321
+source: 20127816
+    b                5.06126
+    p                2.67386
+source: 34939333
+    b                4.97776
+    p                2.67025
+source: 48251001
+    b                5.25488
+    p                2.73453
+    a                0.02989
+source: 19524253
+    b                5.39672
+    p                2.67366
+source: 43676726
+    b                4.91312
+    p                2.63661
+source: 33055508
+    b                5.32079
+    p                2.72951
+source: 15244687
+    b                5.22226
+    p                2.73517
+    a                0.02956
+source: 24946738
+    b                5.37190
+    p                2.56913
+source: 6479472
+    b                5.04941
+    p                2.55750
+source: 26077682
+    b                5.49989
+    p                2.78334
+source: 22023875
+    b                5.13543
+    p                2.70244
+Total Compute Time:  160.42526
+all finish at: 1684875089.880653283
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for gapbs_bc_twitter_whole is 10038.28
+Median BW of sock1 for gapbs_bc_twitter_whole is 11165.11
+Max BW of sock0 for gapbs_bc_twitter_whole is 29976.86
+Max BW of sock1 for gapbs_bc_twitter_whole is 25914.69
+Median BW of sock0 for gapbs_bc_twitter_whole is 10038.28
+Median BW of sock1 for gapbs_bc_twitter_whole is 11165.11
+Max BW of sock0 for gapbs_bc_twitter_whole is 29976.86
+Max BW of sock1 for gapbs_bc_twitter_whole is 25914.69
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole.data
+processig damo...
+damo finished 
+Press Ctrl+C to stop
+converting format from perf_data to record failed (snapshot reading failead: unpack requires a buffer of 8 bytes)

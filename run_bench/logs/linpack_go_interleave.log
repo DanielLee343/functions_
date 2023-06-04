@@ -1,0 +1,20 @@
+folder name in playground: linpack_go
+running linpack_go in interleave
+playground:  /home/cc/functions/run_bench/playground/linpack_go
+deleting everything inside folders /home/cc/functions/run_bench/playground/linpack_go/linpack_go.data /home/cc/functions/run_bench/playground/linpack_go/linpack_go_bw.csv /home/cc/functions/run_bench/playground/linpack_go/linpack_go_bw.png /home/cc/functions/run_bench/playground/linpack_go/linpack_go_bw_cdf.png /home/cc/functions/run_bench/playground/linpack_go/linpack_go_bw_raw.csv /home/cc/functions/run_bench/playground/linpack_go/linpack_go_rss.csv /home/cc/functions/run_bench/playground/linpack_go/linpack_go_rss.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/linpack_go/linpack_go.data
+385.99
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for linpack_go is 3717.9
+Median BW of sock1 for linpack_go is 3859.32
+Max BW of sock0 for linpack_go is 5974.82
+Max BW of sock1 for linpack_go is 8920.98
+Median BW of sock0 for linpack_go is 3717.9
+Median BW of sock1 for linpack_go is 3859.32
+Max BW of sock0 for linpack_go is 5974.82
+Max BW of sock1 for linpack_go is 8920.98
+Press Ctrl+C to stop
+processig damo...

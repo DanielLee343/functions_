@@ -1,0 +1,109 @@
+folder name in playground: gapbs_bc_twitter_whole
+running gapbs_bc_twitter_whole in base
+g++ -std=c++17 -O3 -Wall -fopenmp src/bfs.cc -o bfs -lnuma
+g++ -std=c++17 -O3 -Wall -fopenmp src/pr.cc -o pr -lnuma
+g++ -std=c++17 -O3 -Wall -fopenmp src/bc.cc -o bc -lnuma
+g++ -std=c++17 -O3 -Wall -fopenmp src/cc.cc -o cc -lnuma
+g++ -std=c++17 -O3 -Wall -fopenmp src/cc_sv.cc -o cc_sv -lnuma
+g++ -std=c++17 -O3 -Wall -fopenmp src/pr_spmv.cc -o pr_spmv -lnuma
+g++ -std=c++17 -O3 -Wall -fopenmp src/sssp.cc -o sssp -lnuma
+g++ -std=c++17 -O3 -Wall -fopenmp src/tc.cc -o tc -lnuma
+g++ -std=c++17 -O3 -Wall -fopenmp src/converter.cc -o converter -lnuma
+playground:  /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole
+deleting everything inside folders /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/abs_addr.txt /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole.data /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole.png /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_bw.csv /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_bw.png /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_bw_cdf.png /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_bw_raw.csv /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_rss.csv /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_rss.png /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_wss.txt /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole_wss_cdf.png /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_cc_twitter_whole.data
+waiting for damo to start1
+whole start at: 1684874711.888526167
+index: 0 ; 0
+index: 0 ; 0
+Read Time:           33.53602
+get into do damo
+computing start at: 1684874745.565463387
+Graph has 61578415 nodes and 1468364884 directed edges for degree: 23
+running damo 
+    a                0.01997
+source: 12441072
+found damo, start gen_rss
+waiting for damo to start2
+found damo, start gen_bw
+waiting for damo to start3
+    b                4.51871
+    p                2.22587
+source: 54488257
+    b                4.38590
+    p                2.21757
+source: 25451915
+    b                4.28300
+    p                2.20338
+source: 57714473
+    b                4.37231
+    p                2.20954
+    a                0.02581
+source: 14839494
+    b                4.78376
+    p                2.20547
+source: 32081104
+    b                4.79519
+    p                2.28667
+source: 52957357
+    b                4.27637
+    p                2.20665
+source: 50444380
+    b                4.37073
+    p                2.23413
+    a                0.02577
+source: 49590701
+    b                4.28951
+    p                2.17026
+source: 20127816
+    b                4.21111
+    p                2.16907
+source: 34939333
+    b                4.13973
+    p                2.16782
+source: 48251001
+    b                4.41534
+    p                2.23879
+    a                0.02572
+source: 19524253
+    b                4.51926
+    p                2.18572
+source: 43676726
+    b                4.10035
+    p                2.14186
+source: 33055508
+    b                4.48375
+    p                2.23813
+source: 15244687
+    b                4.36952
+    p                2.21842
+    a                0.02092
+source: 24946738
+    b                4.50520
+    p                2.12564
+source: 6479472
+    b                4.22947
+    p                2.08739
+source: 26077682
+    b                4.60268
+    p                2.27104
+source: 22023875
+    b                4.30864
+    p                2.20584
+Total Compute Time:  133.05459
+all finish at: 1684874878.696892876
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for gapbs_bc_twitter_whole is 24383.065
+Median BW of sock1 for gapbs_bc_twitter_whole is 245.095
+Max BW of sock0 for gapbs_bc_twitter_whole is 50329.02
+Max BW of sock1 for gapbs_bc_twitter_whole is 4265.93
+Median BW of sock0 for gapbs_bc_twitter_whole is 24383.065
+Median BW of sock1 for gapbs_bc_twitter_whole is 245.095
+Max BW of sock0 for gapbs_bc_twitter_whole is 50329.02
+Max BW of sock1 for gapbs_bc_twitter_whole is 4265.93
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole.data
+processig damo...
+damo finished 
+Press Ctrl+C to stop

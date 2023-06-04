@@ -58,6 +58,8 @@ def transcode_mp3(video, duration):
 operations = { 'transcode' : transcode_mp3, 'to_gif' : to_gif, 'watermark' : watermark }
 
 def main():
+    print("In:",  time.perf_counter())
+    
     # input_bucket = event.get('bucket').get('input')
     # output_bucket = event.get('bucket').get('output')
     # key = event.get('object').get('key')
@@ -115,7 +117,7 @@ def main():
     # download_time = (download_stop - download_begin) / datetime.timedelta(microseconds=1)
     # upload_time = (upload_stop - upload_begin) / datetime.timedelta(microseconds=1)
     process_time = "{:.2f}".format(process_end - process_begin)
-    print(process_time)
+    print("process time: ", process_time)
     # return {
     #         'result': {
     #             'bucket': output_bucket,
@@ -129,5 +131,6 @@ def main():
     #             'compute_time': process_time
     #         }
     #     }
+    print("Out:",  time.perf_counter())
 
 main()

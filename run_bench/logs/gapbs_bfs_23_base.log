@@ -1,0 +1,39 @@
+folder name in playground: gapbs_bfs_23
+running gapbs_bfs_23 in base
+make: Nothing to be done for 'all'.
+playground:  /home/cc/functions/run_bench/playground/gapbs_bfs_23
+deleting everything inside folders /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23.data /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_bw.csv /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_bw.png /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_bw_cdf.png /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_bw_raw.csv /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_rss.csv /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23_rss.png
+waiting for damo to start1
+whole start at: 1684872221.197237061
+Generate Time:       7.62357
+neighs: 0x7fff6e1fe010 ; 140735040970768
+index: 0 ; 0
+Build Time:          6.26297
+sq_neighs: 0x7fff2c738010 ; 140733939154960
+index: 0 ; 0
+get into do damo
+computing start at: 1684872237.51777790
+Graph has 8388607 nodes and 129337750 undirected edges for degree: 15
+running damo 
+found damo, start gen_rss
+waiting for damo to start2
+found damo, start gen_bw
+waiting for damo to start3
+Total Compute Time:  54.23079
+all finish at: 1684872293.721592078
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for gapbs_bfs_23 is 15804.865
+Median BW of sock1 for gapbs_bfs_23 is 234.97500000000002
+Max BW of sock0 for gapbs_bfs_23 is 20180.42
+Max BW of sock1 for gapbs_bfs_23 is 2296.14
+Median BW of sock0 for gapbs_bfs_23 is 15804.865
+Median BW of sock1 for gapbs_bfs_23 is 234.97500000000002
+Max BW of sock0 for gapbs_bfs_23 is 20180.42
+Max BW of sock1 for gapbs_bfs_23 is 2296.14
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/gapbs_bfs_23/gapbs_bfs_23.data
+processig damo...
+damo finished 
+Press Ctrl+C to stop

@@ -1,0 +1,21 @@
+folder name in playground: watermark
+running watermark in base
+playground:  /home/cc/functions/run_bench/playground/watermark
+deleting everything inside folders /home/cc/functions/run_bench/playground/watermark/watermark.data /home/cc/functions/run_bench/playground/watermark/watermark.png /home/cc/functions/run_bench/playground/watermark/watermark.txt /home/cc/functions/run_bench/playground/watermark/watermark_bw.csv /home/cc/functions/run_bench/playground/watermark/watermark_bw.png /home/cc/functions/run_bench/playground/watermark/watermark_bw_cdf.png /home/cc/functions/run_bench/playground/watermark/watermark_bw_raw.csv /home/cc/functions/run_bench/playground/watermark/watermark_rss.csv /home/cc/functions/run_bench/playground/watermark/watermark_rss.png /home/cc/functions/run_bench/playground/watermark/watermark_wss.png /home/cc/functions/run_bench/playground/watermark/watermark_wss.txt /home/cc/functions/run_bench/playground/watermark/watermark_wss_cdf.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/watermark/watermark.data
+/home/cc/functions/run_bench/normal_run/watermark/processed-137_4k.mp4
+69.24
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for watermark is 11801.99
+Median BW of sock1 for watermark is 139.33
+Max BW of sock0 for watermark is 17424.13
+Max BW of sock1 for watermark is 835.2
+Median BW of sock0 for watermark is 11801.99
+Median BW of sock1 for watermark is 139.33
+Max BW of sock0 for watermark is 17424.13
+Max BW of sock1 for watermark is 835.2
+Press Ctrl+C to stop
+processig damo...

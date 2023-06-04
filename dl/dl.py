@@ -1,13 +1,17 @@
 import argparse
-import subprocess
+import subprocess, time
 import sys, time, os
 import json
 from pathlib import Path
 import learning
 
+import datetime
+
 initTime = time.time()
 CUR_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 def main():
+    current_time = datetime.datetime.now()
+    print("whole start time:", current_time)
     # Read commands parsed by users
     parser = argparse.ArgumentParser(
         prog='canary', description='All in One action deep learning')
@@ -18,15 +22,17 @@ def main():
     parser.add_argument('-d', '--dataset', type=str,
                         help='Target dataset. \nDefault is CIFAR10.')
     parser.add_argument('-b', '--batch', type=int,
-                        help='Size of data batch. \nDefault is 64.')
+                        help='Size of data batch. \nDefault is 128.')
     parser.add_argument('-e', '--epoch', type=int,
-                        help='Number of epochs. \nDefault is 100.')
+                        help='Number of epochs. \nDefault is 5.')
     parser.add_argument('-t', '--type', type=str,
                         help='Batch or standalone computation (use std or batch). \nDefault is std')
     parser.add_argument('-hm', '--heatmap', action='store_true',
                         help='Whether to run damo to generate heatmap. \nDefault is false')
     parser.add_argument('-vtune', action='store_true',
                         help='Whether to run vtune profiler. \nDefault is false')
+    parser.add_argument('-i', '--inference', type=int,
+                        help='Whether to run inference job \nDefault is 0')
 
     print("MAKESPAN ::> Job Launched -> Time = {0}.s".format(0))
     compile(parser)
@@ -66,11 +72,13 @@ def buildDL(params):
     # dataset = data_features['name']
     batch_size = 128 if params['batch'] is None else params['batch']
     epochs = 5 if params['epoch'] is None else params['epoch']
+    inference = 0 if params['inference'] is None else params['inference']
     # params['model'] = file_content['model']['name']
     params['model'] = model
     params['dataset'] = dataset
     params['batch'] = batch_size
     params['epochs'] = epochs
+    params['inference'] = inference
     # metadata = json.dumps({"model": file_content['model']['name'], "dataset": dataset,
     #                        "batch": batch_size, "epochs": epochs, "features": params["features"]})
     

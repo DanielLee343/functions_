@@ -1,0 +1,21 @@
+folder name in playground: gif
+running gif in cxl
+playground:  /home/cc/functions/run_bench/playground/gif
+deleting everything inside folders /home/cc/functions/run_bench/playground/gif/gif.data /home/cc/functions/run_bench/playground/gif/gif_bw.csv /home/cc/functions/run_bench/playground/gif/gif_bw.png /home/cc/functions/run_bench/playground/gif/gif_bw_cdf.png /home/cc/functions/run_bench/playground/gif/gif_bw_raw.csv /home/cc/functions/run_bench/playground/gif/gif_rss.csv /home/cc/functions/run_bench/playground/gif/gif_rss.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/gif/gif.data
+/home/cc/functions/run_bench/normal_run/watermark/processed-concat.mp4.gif
+116.07
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for gif is 116.17
+Median BW of sock1 for gif is 2482.56
+Max BW of sock0 for gif is 770.96
+Max BW of sock1 for gif is 5627.03
+Median BW of sock0 for gif is 116.17
+Median BW of sock1 for gif is 2482.56
+Max BW of sock0 for gif is 770.96
+Max BW of sock1 for gif is 5627.03
+Press Ctrl+C to stop
+processig damo...

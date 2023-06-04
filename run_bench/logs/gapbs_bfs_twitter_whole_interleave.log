@@ -1,0 +1,36 @@
+folder name in playground: gapbs_bfs_twitter_whole
+running gapbs_bfs_twitter_whole in interleave
+make: Nothing to be done for 'all'.
+playground:  /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole
+deleting everything inside folders /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole/gapbs_bfs_twitter_whole.data /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole/gapbs_bfs_twitter_whole_bw.csv /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole/gapbs_bfs_twitter_whole_bw.png /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole/gapbs_bfs_twitter_whole_bw_cdf.png /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole/gapbs_bfs_twitter_whole_bw_raw.csv /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole/gapbs_bfs_twitter_whole_rss.csv /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole/gapbs_bfs_twitter_whole_rss.png
+waiting for damo to start1
+whole start at: 1684873030.516727313
+index: 0 ; 0
+index: 0 ; 0
+Read Time:           37.97063
+get into do damo
+computing start at: 1684873068.695711235
+Graph has 61578415 nodes and 1468364884 directed edges for degree: 23
+running damo 
+found damo, start gen_rss
+waiting for damo to start2
+found damo, start gen_bw
+waiting for damo to start3
+Total Compute Time:  63.98303
+all finish at: 1684873134.897415062
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for gapbs_bfs_twitter_whole is 8182.48
+Median BW of sock1 for gapbs_bfs_twitter_whole is 9491.95
+Max BW of sock0 for gapbs_bfs_twitter_whole is 11771.23
+Max BW of sock1 for gapbs_bfs_twitter_whole is 15682.3
+Median BW of sock0 for gapbs_bfs_twitter_whole is 8182.48
+Median BW of sock1 for gapbs_bfs_twitter_whole is 9491.95
+Max BW of sock0 for gapbs_bfs_twitter_whole is 11771.23
+Max BW of sock1 for gapbs_bfs_twitter_whole is 15682.3
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/gapbs_bfs_twitter_whole/gapbs_bfs_twitter_whole.data
+processig damo...
+damo finished 
+Press Ctrl+C to stop

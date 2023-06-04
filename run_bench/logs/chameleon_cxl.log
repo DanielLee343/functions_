@@ -1,0 +1,20 @@
+folder name in playground: chameleon
+running chameleon in cxl
+playground:  /home/cc/functions/run_bench/playground/chameleon
+deleting everything inside folders /home/cc/functions/run_bench/playground/chameleon/chameleon.data /home/cc/functions/run_bench/playground/chameleon/chameleon_bw.csv /home/cc/functions/run_bench/playground/chameleon/chameleon_bw.png /home/cc/functions/run_bench/playground/chameleon/chameleon_bw_cdf.png /home/cc/functions/run_bench/playground/chameleon/chameleon_bw_raw.csv /home/cc/functions/run_bench/playground/chameleon/chameleon_rss.csv /home/cc/functions/run_bench/playground/chameleon/chameleon_rss.png
+returning
+DAMO_FILE:  /home/cc/functions/run_bench/playground/chameleon/chameleon.data
+124.02
+plot rss done
+plot bw done
+plot bw done
+Median BW of sock0 for chameleon is 126.27
+Median BW of sock1 for chameleon is 592.77
+Max BW of sock0 for chameleon is 910.09
+Max BW of sock1 for chameleon is 12068.84
+Median BW of sock0 for chameleon is 126.27
+Median BW of sock1 for chameleon is 592.77
+Max BW of sock0 for chameleon is 910.09
+Max BW of sock1 for chameleon is 12068.84
+Press Ctrl+C to stop
+processig damo...
