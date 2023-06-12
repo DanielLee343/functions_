@@ -17,7 +17,7 @@ gen_heatmap()
     # sudo $DAMO report raw -i $DEMO_FILE \
     #     > $PLAYGROUND_DIR/$workload_name/"$workload_name".txt & # <- no need 
     sudo $DAMO report heats -i $DEMO_FILE \
-        --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png &
+        --resol 1000 2000 --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png &
     # sudo $DAMO report wss -i $DEMO_FILE \
     #     --sortby time \
     #     --range 0 100 1 \
@@ -27,13 +27,16 @@ gen_heatmap()
     # sudo $DAMO report heats -i $DEMO_FILE \
     #     --abs_addr > $PLAYGROUND_DIR/$workload_name/abs_addr.txt &
     sudo $DAMO report heats -i $DEMO_FILE \
-        --abs_time --abs_addr > $PLAYGROUND_DIR/$workload_name/abs_addr_time.txt &
+        --abs_time --abs_addr --resol 1000 2000 > $PLAYGROUND_DIR/$workload_name/abs_addr_time.txt &
     while [ ! -z "$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)" ]
     do
         sleep 1
     done
     sudo chown -R $(whoami) $PLAYGROUND_DIR/$workload_name/*
     # python /home/cc/functions/run_bench/get_bw_wss_stat.py $workload_name wss
+    if [ "$workload_name" = "gif" ]; then
+        /home/cc/functions/run_bench/truncate_file.sh
+    fi
     echo "plot wss and heatmap done"
 }
 gen_heatmap_time_range()

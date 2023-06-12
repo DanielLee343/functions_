@@ -146,7 +146,7 @@ wait_4_gen_heatmap()
     local wl_folder=$2
     local check_pid=$3
     if [ "$func" = "pagerank" ] || [ "$func" = "mst" ] || [ "$func" = "bfs" ] || [ "$func" = "biconnect" ] \
-    || [[ $func == "dl_"* ]] ; then
+    || [[ $func == "gapbs_"* ]] || [[ $func == "dl_"* ]]; then
         echo "waiting for worklaod to finish"
         # while [ -z "$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)" ]
         # do
@@ -157,7 +157,7 @@ wait_4_gen_heatmap()
         while [ -d "/proc/${check_pid}" ]
         do
             # echo "damo, or wl still running..."
-            sleep 1
+            sleep 0.5
         done
         sleep 4
         gen_heatmap $check_pid $wl_folder false &
@@ -263,13 +263,13 @@ run_workload()
     elif [ "$func" = "dl_downsample_imagenet_resnet50_128" ]; then
         workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 1 -d downsample_imagenet -m resnet50 -b 128 -hm"
     elif [ "$func" = "dl_inference" ]; then
-        workload_cmd="python /home/cc/functions/dl/inference.py 8 true"
+        workload_cmd="python /home/cc/functions/dl/inference.py 16 true"
 
     elif [ "$func" = "gapbs_bc_twitter_whole" ]; then
         cd ~/gapbs
         make
         cd 
-        workload_cmd="/home/cc/gapbs/bc -f $TWITTER_WHOLE -i1 -n4 $func"
+        workload_cmd="/home/cc/gapbs/bc -f $TWITTER_WHOLE -i4 -n4 -d $func"
     elif [ "$func" = "gapbs_bfs_23" ]; then
         cd ~/gapbs
         make
@@ -309,14 +309,14 @@ run_workload()
     # echo "check now!!"
     # sleep 20
     # delete & if doing vtune, otherwise vtune doesn't know when to stop
-    export LD_PRELOAD=/home/cc/syscall_intercept/test/porter_lib.so
-    # export LD_PRELOAD=/home/cc/syscall_intercept/test/static_placement.so
+    # export LD_PRELOAD=/home/cc/syscall_intercept/test/porter_lib.so
+    export LD_PRELOAD=/home/cc/syscall_intercept/test/static_placement.so
     if [[ $func == "gapbs_"* ]]; then
         export OMP_NUM_THREADS=8
     fi
     # run workload
     # 2> $PLAYGROUND_DIR/$wl_folder/intecepted.log
-    $cmd_prefix $workload_cmd 2> $PLAYGROUND_DIR/$wl_folder/intecepted.log &
+    $cmd_prefix $workload_cmd 2> $PLAYGROUND_DIR/$wl_folder/intercepted.log &
     check_pid=$!
     if [ "$check_pid" = "" ]; then
         echo "unable to get wl pid, something is wrong"; exit 1

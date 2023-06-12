@@ -5,6 +5,8 @@ import time, sys
 import numpy as np
 import os, subprocess
 
+tf.get_logger().setLevel('FATAL')
+# os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 num_iter = int(sys.argv[1])
 run_damo = bool(sys.argv[2])
 # Load CIFAR-100 dataset
@@ -38,17 +40,17 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=
 # Perform inference on the test data
 # print("running interference {} time".format(num_iter))
 start = time.time()
-if run_damo:
-    check_pid = str(os.getpid())
-    directory_path = "/home/cc/functions/run_bench/playground/dl_inference"
-    if not os.path.exists(directory_path):
-        os.makedirs(directory_path)
-    damo_trace = os.path.join(directory_path, "dl_inference.data")
-    print("damo_trace file is: ", damo_trace)
-    # time.sleep(5)
-    subprocess.Popen(["sudo","damo","record", "-s", "1000", "-a", "100000", "-u",
-                        "1000000", "-n", "5000", "-m", "6000", "-o", 
-                    damo_trace, check_pid])
+# if run_damo:
+    # check_pid = str(os.getpid())
+    # directory_path = "/home/cc/functions/run_bench/playground/dl_inference"
+    # if not os.path.exists(directory_path):
+    #     os.makedirs(directory_path)
+    # damo_trace = os.path.join(directory_path, "dl_inference.data")
+    # print("damo_trace file is: ", damo_trace)
+    # # time.sleep(5)
+    # subprocess.Popen(["sudo","damo","record", "-s", "1000", "-a", "100000", "-u",
+    #                     "1000000", "-n", "5000", "-m", "6000", "-o", 
+    #                 damo_trace, check_pid])
 predictions = model.predict(duplicated_data)
 end = time.time()
 print("inference time: {:.2f}".format(end - start))
