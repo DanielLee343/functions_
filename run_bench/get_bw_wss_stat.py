@@ -20,22 +20,22 @@ def get_bw_stat(func_trace_dir, func):
     print("Max BW of sock1 for {} is {}".format(func, max(cur_skt_1_mem)))
 
     # plot cdf of bw
-    # plt.rcParams.update(plt.rcParamsDefault)
-    # plt.rcParams["figure.autolayout"] = True
-    # skt_0_x = np.sort(cur_skt_0_mem)
-    # skt_0_y = np.arange(1, len(skt_0_x) + 1) / len(skt_0_x)
-    # skt_1_x = np.sort(cur_skt_1_mem)
-    # skt_1_y = np.arange(1, len(skt_1_x) + 1) / len(skt_1_x)
-    # fig, ax = plt.subplots()
-    # ax.plot(skt_0_x, skt_0_y, label='sock 0')
-    # ax.plot(skt_1_x, skt_1_y, label='sock 1')
-    # ax.set_xlabel('Mmeory Bandwidth (MB/s)')
-    # ax.set_ylabel('CDF')
-    # ax.legend()
-    # ax.set_title('CDF of {}'.format(func))
-    # # plt.grid(False)
-    # output_cdf = os.path.join(func_trace_dir, func + "_bw_cdf.png")
-    # plt.savefig(output_cdf)
+    plt.rcParams.update(plt.rcParamsDefault)
+    plt.rcParams["figure.autolayout"] = True
+    skt_0_x = np.sort(cur_skt_0_mem)
+    skt_0_y = np.arange(1, len(skt_0_x) + 1) / len(skt_0_x)
+    skt_1_x = np.sort(cur_skt_1_mem)
+    skt_1_y = np.arange(1, len(skt_1_x) + 1) / len(skt_1_x)
+    fig, ax = plt.subplots()
+    ax.plot(skt_0_x, skt_0_y, label='sock 0')
+    ax.plot(skt_1_x, skt_1_y, label='sock 1')
+    ax.set_xlabel('Mmeory Bandwidth (MB/s)')
+    ax.set_ylabel('CDF')
+    ax.legend()
+    ax.set_title('CDF of {}'.format(func))
+    # plt.grid(False)
+    output_cdf = os.path.join(func_trace_dir, func + "_bw_cdf.png")
+    plt.savefig(output_cdf)
 
 def gen_wss_cdf(func_trace_dir, func):
     # plt.rcParams.update(plt.rcParamsDefault)
@@ -55,6 +55,7 @@ def gen_wss_cdf(func_trace_dir, func):
             # line_index += 1
     # print(all_wss)
     x = np.sort(all_wss)
+    print("max wss: ", x[-1])
     y = np.arange(1, len(x) + 1) / len(x)
     plt.plot(x, y, linestyle='-', color='green')
     plt.xlabel('Working Set Size (MB)')

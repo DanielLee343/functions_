@@ -4,8 +4,8 @@ PLAYGROUND_DIR=/home/cc/functions/run_bench/playground
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 TWITTER_BIG=/home/cc/functions/run_bench/normal_run/graph_dir/twitter_rv.el
 TWITTER_WHOLE=/home/cc/gapbs/benchmark/twitter.sg
-# DAMO=/home/cc/damo/damo
-DAMO=damo
+DAMO=/home/cc/damo/damo
+# DAMO=damo
 check_pid=99999
 gen_rss() 
 {
@@ -207,6 +207,8 @@ run_workload()
         workload_cmd="python /home/cc/functions/run_bench/normal_run/para_comp.py 9000000000 12"
     elif [ "$func" = "img_proc" ]; then
         workload_cmd="python /home/cc/functions/run_bench/normal_run/img_proc/img_proc.py 191mb"
+    elif [ "$func" = "img_recog" ]; then
+        workload_cmd="python /home/cc/functions/run_bench/normal_run/img_recog/img_recog.py place_holder"
     elif [ "$func" = "matmul_go" ]; then
         workload_cmd="matmul 12000"
     elif [ "$func" = "linpack_go" ]; then
@@ -302,9 +304,9 @@ run_workload()
     if [ ! -d "$PLAYGROUND_DIR/$wl_folder" ]; then
         echo "creating folder" $PLAYGROUND_DIR/$wl_folder
         mkdir -p $PLAYGROUND_DIR/$wl_folder
-    else
-        echo "deleting everything inside folders" $PLAYGROUND_DIR/$wl_folder/*
-        rm -rf $PLAYGROUND_DIR/$wl_folder/*
+    # else
+        # echo "deleting everything inside folders" $PLAYGROUND_DIR/$wl_folder/*
+        # rm -rf $PLAYGROUND_DIR/$wl_folder/*
     fi
     # echo "check now!!"
     # sleep 20

@@ -1,0 +1,12 @@
+DAMO_FILE:  /home/cc/functions/run_bench/playground/dl_downsample_imagenet_resnet50_128/dl_downsample_imagenet_resnet50_128.data
+processig damo...
+Signal 1 (HUP) caught by ps (3.3.16).
+Traceback (most recent call last):
+  File "/home/cc/functions/run_bench/get_bw_wss_stat.py", line 117, in <module>
+    main()
+  File "/home/cc/functions/run_bench/get_bw_wss_stat.py", line 76, in main
+    gen_wss_cdf(func_trace_dir, func)
+  File "/home/cc/functions/run_bench/get_bw_wss_stat.py", line 58, in gen_wss_cdf
+    print("max wss: ", x[-1])
+IndexError: index -1 is out of bounds for axis 0 with size 0
+plot wss and heatmap done

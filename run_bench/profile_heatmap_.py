@@ -3,9 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time, sys
 
-def to_csv(df):
-    df.to_csv('/home/cc/functions/run_bench/playground/gif/test.csv', index=False)
-
 def plot_heatness_dist(df):
     # column_to_plot = df['Column1']
     plt.rcdefaults()
@@ -150,9 +147,10 @@ def merge_heats(filtered_sorted_all, abs_all):
     heat_list = [] # a list contains merged tuples (start_addr, end_addr) 
     heat_set = set() # a set contains merged tuples (start_addr, end_addr) 
     considered_heats = set() # a list contains index that has been considered
-    smallest_temp = filtered_sorted_all.iloc[0]
-    merge_expand_thresh = 0.5
-    merge_expand_value = smallest_temp['temp'] * merge_expand_thresh
+    # smallest_temp = filtered_sorted_all.iloc[0]
+    # merge_expand_thresh = 0.5
+    # merge_expand_value = smallest_temp['temp'] * merge_expand_thresh
+    merge_expand_value = filtered_sorted_all[-1][1]/1000
     # print("smallest:", smallest_temp)
     print("smallest:", merge_expand_value)
     # time.sleep(10)
@@ -252,30 +250,34 @@ def write_res(hot_regions, file_path):
 if __name__ == "__main__":
     workload_name = sys.argv[1]
     abs_all = pd.read_csv('/home/cc/functions/run_bench/playground/{}/abs_addr_time.txt'.format(workload_name), sep='\t', names=['abs_time', 'abs_addr', 'temp'])
-    sorted_abs_all = abs_all.sort_values(by='temp')
+    # sorted_abs_all = abs_all.sort_values(by='temp')
     # print(sorted_abs_all)
-    filtered_sorted_all = sorted_abs_all[sorted_abs_all['temp'] != 0.0]
+    filtered_sorted_all = abs_all[abs_all['temp'] != 0.0]
+    grouped_df = filtered_sorted_all.groupby(filtered_sorted_all.iloc[:, 1])
+    heat_sum = []
+    for group_name, group_data in grouped_df:
+        # print("Group:", group_name)
+        # print(group_data)
+        cur_addr_heat_sum = group_data.iloc[:, 2].sum()
+        heat_sum.append((group_name, cur_addr_heat_sum))
+        # break
+    heat_sum = sorted(heat_sum, key=lambda x: x[1], reverse=True)
+    split_value = 0.1 # first 90% hot regions will be preserved
+    heat_sum_hot = heat_sum[0:int(len(heat_sum)*(1 - split_value))]
+    print(len(heat_sum_hot))
 
-    plot_heatness_cdf(filtered_sorted_all['temp'], "heat_cdf")
-    # plot_heatness_dist(filtered_sorted_all['temp'])
-    # chunks = get_cdf_thresh_chunk(filtered_sorted_all, 0.5)
-    chunks = get_heatness_thresh_chunk(filtered_sorted_all, 0.7)
-    print(chunks)
-    if len(chunks) == 0:
-        print("no hot regions observed")
-        exit(0)
 
-    # # heat_list: [(time_start, time_end, addr_start, addr_end, heat_weight)]
-    heat_set, merged_set = merge_heats(chunks, abs_all)
-    print("len org heat_set: ", len(heat_set))
-    print("len merged_set: ", len(merged_set))
-    print(merged_set)
+    # plot_heatness_cdf(filtered_sorted_all['temp'], "heat_cdf")
+    # # chunks = get_cdf_thresh_chunk(filtered_sorted_all, 0.5)
+    # chunks = get_heatness_thresh_chunk(filtered_sorted_all, 0.1)
+    # print(chunks)
+    # if len(chunks) == 0:
+    #     print("no hot regions observed")
+    #     exit(0)
+
+    heat_set, merged_set = merge_heats(heat_sum_hot, abs_all)
+    # print("len org heat_set: ", len(heat_set))
+    # print("len merged_set: ", len(merged_set))
+    # print(merged_set)
     
-    # profile mmap call stack
-    # TODO: modify porter_lib, comma, strict row elem representation
-    # mmap_ranges = parse_mmap_df()
-    # print("mmap intercepted length: ", len(mmap_ranges))
-    # to_DRAM_regions = get_intersect(mmap_ranges, merged_set)
-    # print("final intersection length: ", len(to_DRAM_regions))
-    # print(to_DRAM_regions)
-    write_res(merged_set, "/home/cc/res.txt")
+    # write_res(merged_set, "/home/cc/res.txt")

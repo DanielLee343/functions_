@@ -307,6 +307,16 @@ def run_transfer(params):
     else:
         model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
+    x_train_ = []
+    y_train_= []
+    if dataset == "downsample_imagenet":
+        x_train_ = x_train[0:30000]
+        y_train_ = y_train[0:30000]
+    else:
+        x_train_ = x_train
+        y_train_ = y_train
+    print(x_train.shape)
+    print(y_train.shape)
     check_pid = str(os.getpid())
     trace_name = "dl_" + dataset + "_" + selected_model + "_" + str(BATCH_SIZE)
     # time.sleep(5)
@@ -325,8 +335,6 @@ def run_transfer(params):
                           PROF_DIR, "-target-pid", check_pid])
     # Train the model
     train_start = time.time()
-    print(x_train.shape)
-    print(y_train.shape)
     # x_train = x_train[0:20000]
     # y_train = y_train[0:20000]
     # time.sleep(5)
@@ -336,5 +344,5 @@ def run_transfer(params):
     #         subprocess.Popen(['numactl', '--physcpubind', '12,14,16,18,20,22', '--', 'python', '/home/cc/functions/dl/inference.py', '5'], stdout=output_file)
     current_time = datetime.datetime.now()
     print("train start time:", current_time)
-    model.fit(x_train, y_train, epochs=NB_EPOCHS, batch_size=BATCH_SIZE)
+    model.fit(x_train_, y_train_, epochs=NB_EPOCHS, batch_size=BATCH_SIZE)
     print("training_time: {:.2f}".format(time.time() - train_start))
