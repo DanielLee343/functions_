@@ -1,10 +1,15 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import time, sys
+import time
+import sys
+
+PAGE_SIZE = 4096
+
 
 def to_csv(df):
     df.to_csv('/home/cc/functions/run_bench/playground/gif/test.csv', index=False)
+
 
 def plot_heatness_dist(df):
     # column_to_plot = df['Column1']
@@ -16,7 +21,8 @@ def plot_heatness_dist(df):
     plt.ylabel('Memory Access Frequency')
     plt.title('Distribution of Heatness')
     global workload_name
-    output_dist = "/home/cc/functions/run_bench/playground/{}/temperatur_distribution.png".format(workload_name)
+    output_dist = "/home/cc/functions/run_bench/playground/{}/temperatur_distribution.png".format(
+        workload_name)
     plt.savefig(output_dist)
 
 # def slope():
@@ -36,6 +42,8 @@ def plot_heatness_dist(df):
     # print("Corresponding y:", y_value)
 
 # Given the none-zero, sorted heatness dataframe, and threshold of cdf to split, return the subset of df, where the heatness is larger than the value
+
+
 def get_cdf_thresh_chunk(filtered_sorted_df, thresh=0.8):
     cdf_split_index = int(thresh * len(filtered_sorted_df))
     # print(cdf_split_index)
@@ -46,17 +54,22 @@ def get_cdf_thresh_chunk(filtered_sorted_df, thresh=0.8):
     return cdf_thresh_chunk
 
 # Given the heatness of the none-zero, sorted df, plot the cdf of heatness
+
+
 def plot_heatness_cdf(filtered_sorted_temp, filename):
     plt.rcdefaults()
     global workload_name
-    cdf_y = np.arange(1, len(filtered_sorted_temp) + 1) / len(filtered_sorted_temp)
+    cdf_y = np.arange(1, len(filtered_sorted_temp) + 1) / \
+        len(filtered_sorted_temp)
     plt.plot(filtered_sorted_temp, cdf_y, linestyle='-', color='red')
     plt.xlabel('Memory Access Frequency')
     plt.ylabel('CDF')
     plt.title('CDF of heatness of {}'.format(workload_name))
     plt.grid(False)
-    output_cdf = "/home/cc/functions/run_bench/playground/{}/{}.png".format(workload_name,filename)
+    output_cdf = "/home/cc/functions/run_bench/playground/{}/{}.png".format(
+        workload_name, filename)
     plt.savefig(output_cdf)
+
 
 def get_heatness_thresh_chunk(filtered_sorted_df, temp_split_percent=0.8):
     largest_temp = filtered_sorted_df['temp'].iloc[-1]
@@ -71,6 +84,8 @@ def get_heatness_thresh_chunk(filtered_sorted_df, temp_split_percent=0.8):
     return heatness_thresh_chunk
 
 # this will return a tuple contains (mmap start address, hot region start, hot region end)
+
+
 def check_intersection(range1, range2):
     mmap_start, mmap_end = range1
     heat_start, heat_end = range2
@@ -85,7 +100,8 @@ def check_intersection(range1, range2):
             print("mmaped region above hot region starts, need to pay attention")
         assert intersect_end > intersect_start, "wrong"
         return intersect_range
-    
+
+
 def check_combine(range1, range2):
     A, B = range1
     C, D = range2
@@ -97,8 +113,10 @@ def check_combine(range1, range2):
         max_bound = max(B, D)
         assert max_bound > lower_bound, "wrong"
         return (lower_bound, max_bound)
-    
+
 # merge adjacent ranges until no ranges overlap
+
+
 def merge_adj(heat_set):
     # new_set = set()
     # tmp_set = heat_set
@@ -125,8 +143,10 @@ def merge_adj(heat_set):
     print("after truncate: ", len(heat_set))
     third_elements = [t[2] for t in heat_set]
     plot_heatness_cdf(third_elements, "to_drop_off")
-    heat_set = [tuple(item[:2]) if len(item) > 2 else item for item in heat_set]
-    
+    # heat_set = [tuple(item[:2]) if len(item) >
+    #             2 else item for item in heat_set] # -> this will give you list that contains dups, will cause error when merging!
+    heat_set = {(x, y) for x, y, _ in heat_set}
+
     while True:
         merged = set()
         for tuple1 in heat_set:
@@ -134,7 +154,8 @@ def merge_adj(heat_set):
             for tuple2 in heat_set:
                 if tuple1 != tuple2:
                     if tuple1[1] >= tuple2[0] and tuple1[0] <= tuple2[1]:
-                        merged.add((min(tuple1[0], tuple2[0]), max(tuple1[1], tuple2[1])))
+                        merged.add(
+                            (min(tuple1[0], tuple2[0]), max(tuple1[1], tuple2[1])))
                     else:
                         remaining_counter -= 1
             if remaining_counter == 0:
@@ -147,9 +168,9 @@ def merge_adj(heat_set):
 
 
 def merge_heats(filtered_sorted_all, abs_all):
-    heat_list = [] # a list contains merged tuples (start_addr, end_addr) 
-    heat_set = set() # a set contains merged tuples (start_addr, end_addr) 
-    considered_heats = set() # a list contains index that has been considered
+    heat_list = []  # a list contains merged tuples (start_addr, end_addr)
+    heat_set = set()  # a set contains merged tuples (start_addr, end_addr)
+    considered_heats = set()  # a list contains index that has been considered
     smallest_temp = filtered_sorted_all.iloc[0]
     merge_expand_thresh = 0.5
     merge_expand_value = smallest_temp['temp'] * merge_expand_thresh
@@ -166,8 +187,8 @@ def merge_heats(filtered_sorted_all, abs_all):
         cur_row_time = latent_heat_row['abs_time']
         start_index = 0
         end_index = 0
-        prev_index = index 
-        next_index = index 
+        prev_index = index
+        next_index = index
         while abs_all.loc[prev_index]['temp'] >= merge_expand_value and abs_all.loc[prev_index]['abs_time'] == cur_row_time:
             considered_heats.add(prev_index)
             heats_sum += abs_all.loc[prev_index]['temp']
@@ -177,7 +198,7 @@ def merge_heats(filtered_sorted_all, abs_all):
         if abs_all.loc[prev_index]['abs_time'] != cur_row_time:
             print("time underflow, updating to next time range")
             start_index = prev_index + 1
-        else: # set start_index to the first row in current time range that is not considered as hot
+        else:  # set start_index to the first row in current time range that is not considered as hot
             start_index = prev_index
 
         # do the same for end_index
@@ -191,42 +212,49 @@ def merge_heats(filtered_sorted_all, abs_all):
         else:
             end_index = next_index
 
-        assert abs_all.loc[start_index]['abs_time'] == abs_all.loc[end_index]['abs_time'], "Timestamp of start_index and end_index must be matched!"
+        assert abs_all.loc[start_index]['abs_time'] == abs_all.loc[end_index][
+            'abs_time'], "Timestamp of start_index and end_index must be matched!"
         if end_index == start_index:
             # standalone heatness, append prev and next
             assert end_index == index, "Logic bug!"
             # abs_all.loc[end_index]['abs_time'], -> for later
-            cur_hot_range = (int(abs_all.loc[end_index - 1]['abs_addr']), int(abs_all.loc[end_index + 1]['abs_addr']), heats_sum)
+            cur_hot_range = (int(abs_all.loc[end_index - 1]['abs_addr']), int(
+                abs_all.loc[end_index + 1]['abs_addr']), heats_sum)
         else:
             assert start_index < end_index, "Start index must be smaller than end index!"
-            
-            cur_hot_range = (int(abs_all.loc[start_index]['abs_addr']), int(abs_all.loc[end_index]['abs_addr']), heats_sum)
+
+            cur_hot_range = (int(abs_all.loc[start_index]['abs_addr']), int(
+                abs_all.loc[end_index]['abs_addr']), heats_sum)
         # cur_hot_range = tuple(int(item) for item in cur_hot_range)
         # if cur_hot_range not in heat_list:
         #     heat_list.append(cur_hot_range)
         heat_set.add(cur_hot_range)
         # print(cur_hot_range)
         # break
-    # merge adjacent ranges 
+    # merge adjacent ranges
     merged_heat_set = merge_adj(heat_set)
 
     return heat_set, merged_heat_set
 
+
 def parse_mmap_df():
     global workload_name
-    call_stack_df = pd.read_csv('/home/cc/functions/run_bench/playground/{}/intercepted.log'.format(workload_name), sep=',', names=['timestamp', 'syscall', 'addr_dec', 'addr_hex', 'size'], on_bad_lines="skip")
+    call_stack_df = pd.read_csv('/home/cc/functions/run_bench/playground/{}/intercepted.log'.format(
+        workload_name), sep=',', names=['timestamp', 'syscall', 'addr_dec', 'addr_hex', 'size'], on_bad_lines="skip")
     call_stack_df.dropna(inplace=True)
     call_stack_df.reset_index(drop=True, inplace=True)
     mmap_df = call_stack_df[call_stack_df['syscall'] == 'mmap']
     # mmap_df['size'] = mmap_df['size'].astype(int)
     # print(mmap_df)
-    mmap_ranges = [] # a list contains mmap start and end addr
+    mmap_ranges = []  # a list contains mmap start and end addr
     for index, mmap_row in mmap_df.iterrows():
-        mmap_range = (int(mmap_row['addr_dec']), int(mmap_row['addr_dec']) + int(mmap_row['size']))
+        mmap_range = (int(mmap_row['addr_dec']), int(
+            mmap_row['addr_dec']) + int(mmap_row['size']))
         mmap_ranges.append(mmap_range)
     # print(mmap_ranges)
     return mmap_ranges
-    
+
+
 def get_intersect(mmap_ranges, merged_set):
     to_DRAM_regions = []
     for mmap_range in mmap_ranges:
@@ -235,6 +263,7 @@ def get_intersect(mmap_ranges, merged_set):
             if curr_region is not None:
                 to_DRAM_regions.append(curr_region)
     return to_DRAM_regions
+
 
 def write_res(hot_regions, file_path):
     with open(file_path, 'w') as file:
@@ -249,9 +278,39 @@ def write_res(hot_regions, file_path):
 #         end_index = abs_all.index.get_loc(each_region[1])
 #         print(start_index, end_index)
 
+
+def align_2_page(heat_set):
+    heat_list = [list(t) for t in heat_set]
+    for each_range in heat_list:
+        start = each_range[0]
+        end = each_range[1]
+        remainder_start = start % PAGE_SIZE
+        remainder_end = end % PAGE_SIZE
+        if remainder_start <= 2048:
+            start -= remainder_start
+            # print("start:", start)
+        else:
+            start += PAGE_SIZE - remainder_start
+            # print("start:", start)
+        if remainder_end <= 2048:
+            end -= remainder_end
+            # print("end:", end)
+        else:
+            end += PAGE_SIZE - remainder_end
+            # print("end:", end)
+        each_range[0] = start
+        each_range[1] = end
+    print("modified:", heat_list)
+    return heat_list
+
+
 if __name__ == "__main__":
     workload_name = sys.argv[1]
-    abs_all = pd.read_csv('/home/cc/functions/run_bench/playground/{}/abs_addr_time.txt'.format(workload_name), sep='\t', names=['abs_time', 'abs_addr', 'temp'])
+    thresh = float(sys.argv[2])
+    if thresh is None:
+        thresh = 0.1
+    abs_all = pd.read_csv('/home/cc/functions/run_bench/playground/{}/abs_addr_time.txt'.format(
+        workload_name), sep='\t', names=['abs_time', 'abs_addr', 'temp'])
     sorted_abs_all = abs_all.sort_values(by='temp')
     # print(sorted_abs_all)
     filtered_sorted_all = sorted_abs_all[sorted_abs_all['temp'] != 0.0]
@@ -259,7 +318,9 @@ if __name__ == "__main__":
     plot_heatness_cdf(filtered_sorted_all['temp'], "heat_cdf")
     # plot_heatness_dist(filtered_sorted_all['temp'])
     # chunks = get_cdf_thresh_chunk(filtered_sorted_all, 0.5)
-    chunks = get_heatness_thresh_chunk(filtered_sorted_all, 0.7)
+    # default: 1 - 0.1 = 90% of the hotest area will be put to DRAM
+    chunks = get_heatness_thresh_chunk(filtered_sorted_all, thresh)
+    # chunks = get_cdf_thresh_chunk(filtered_sorted_all, thresh)
     print(chunks)
     if len(chunks) == 0:
         print("no hot regions observed")
@@ -269,8 +330,9 @@ if __name__ == "__main__":
     heat_set, merged_set = merge_heats(chunks, abs_all)
     print("len org heat_set: ", len(heat_set))
     print("len merged_set: ", len(merged_set))
-    print(merged_set)
-    
+    print("not aligned:", merged_set)
+    as_heats = align_2_page(merged_set)
+
     # profile mmap call stack
     # TODO: modify porter_lib, comma, strict row elem representation
     # mmap_ranges = parse_mmap_df()
@@ -278,4 +340,4 @@ if __name__ == "__main__":
     # to_DRAM_regions = get_intersect(mmap_ranges, merged_set)
     # print("final intersection length: ", len(to_DRAM_regions))
     # print(to_DRAM_regions)
-    write_res(merged_set, "/home/cc/res.txt")
+    write_res(as_heats, "/home/cc/res.txt")

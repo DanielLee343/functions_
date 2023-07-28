@@ -27,7 +27,7 @@ def main():
         image_paths.append(image_path)
     # print(len(image_paths))
     # time.sleep(10)
-    model_path = "/home/cc/img_recog/resnet50-19c8e357.pth"
+    model_path = os.path.join(SCRIPT_DIR, "resnet50-19c8e357.pth")
     # image_path = "/home/cc/img_recog/512px-Cacatua_moluccensis_-Cincinnati_Zoo-8a.jpg"
 
     # input_bucket = event.get('bucket').get('input')

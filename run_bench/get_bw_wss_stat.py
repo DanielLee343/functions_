@@ -1,4 +1,5 @@
-import os, sys
+import os
+import sys
 import pandas as pd
 import statistics
 import numpy as np
@@ -6,16 +7,19 @@ from matplotlib import pyplot as plt
 
 CUR_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 
+
 def get_bw_stat(func_trace_dir, func):
-    file=os.path.join(func_trace_dir, func + "_bw.csv")
+    file = os.path.join(func_trace_dir, func + "_bw.csv")
     # file="/home/cc/functions/run_bench/interference/3_3_bw.csv"
     cur_df = pd.read_csv(file)
-    cur_skt_0_mem = cur_df.iloc[:, 1] # column for Memory (MB/s) for sock0, 13
+    cur_skt_0_mem = cur_df.iloc[:, 1]  # column for Memory (MB/s) for sock0, 13
     cur_skt_1_mem = cur_df.iloc[:, 2]
     cur_skt_0_mem = cur_skt_0_mem.tolist()
     cur_skt_1_mem = cur_skt_1_mem.tolist()
-    print("Median BW of sock0 for {} is {}".format(func, statistics.median(cur_skt_0_mem)))
-    print("Median BW of sock1 for {} is {}".format(func, statistics.median(cur_skt_1_mem)))
+    print("Median BW of sock0 for {} is {}".format(
+        func, statistics.median(cur_skt_0_mem)))
+    print("Median BW of sock1 for {} is {}".format(
+        func, statistics.median(cur_skt_1_mem)))
     print("Max BW of sock0 for {} is {}".format(func, max(cur_skt_0_mem)))
     print("Max BW of sock1 for {} is {}".format(func, max(cur_skt_1_mem)))
 
@@ -37,6 +41,7 @@ def get_bw_stat(func_trace_dir, func):
     output_cdf = os.path.join(func_trace_dir, func + "_bw_cdf.png")
     plt.savefig(output_cdf)
 
+
 def gen_wss_cdf(func_trace_dir, func):
     # plt.rcParams.update(plt.rcParamsDefault)
     # plt.rcParams["figure.autolayout"] = True
@@ -45,13 +50,15 @@ def gen_wss_cdf(func_trace_dir, func):
         line_index = 0
         all_wss = []
         for line in file:
-            if line_index < 4: # get rid of first 4 lines
+            if line_index < 4:  # get rid of first 4 lines
                 line_index += 1
                 continue
             line = line.strip().split()
-            if line[2] != "MiB":
-                continue
-            all_wss.append(round(float(line[1])*1.04858, 2)) # convert MiB to MB and remain 2 decimals
+            if line[2] == "MiB":
+                # convert MiB to MB and remain 2 decimals
+                all_wss.append(round(float(line[1])*1.04858, 2))
+            elif line[2] == "GiB":
+                all_wss.append(round(float(line[1])*1024*1.04858, 2))
             # line_index += 1
     # print(all_wss)
     x = np.sort(all_wss)
@@ -64,7 +71,8 @@ def gen_wss_cdf(func_trace_dir, func):
     plt.grid(False)
     output_cdf = os.path.join(func_trace_dir, func + "_wss_cdf.png")
     plt.savefig(output_cdf)
-    
+
+
 def main():
     func = sys.argv[1]
     wss_or_bw = sys.argv[2]
@@ -78,21 +86,23 @@ def main():
     if wss_or_bw == "bw":
         get_bw_stat(func_trace_dir, func)
 
+
 def test():
     plt.rcParams["figure.figsize"] = [7.50, 3.50]
     plt.rcParams["figure.autolayout"] = True
 
-    with open("/home/cc/functions/run_bench/playground/matmul_go/matmul_go_wss.txt",'r') as file:
+    with open("/home/cc/functions/run_bench/playground/matmul_go/matmul_go_wss.txt", 'r') as file:
         line_index = 0
         all_wss = []
         for line in file:
-            if line_index < 4: # get rid of first 3 lines
+            if line_index < 4:  # get rid of first 3 lines
                 line_index += 1
                 continue
             line = line.strip().split()
             if line[3] != "MiB":
                 continue
-            all_wss.append(round(float(line[1])*1.04858, 2)) # convert MiB to MB and remain 2 decimals
+            # convert MiB to MB and remain 2 decimals
+            all_wss.append(round(float(line[1])*1.04858, 2))
             # line_index += 1
     print(all_wss)
     # N = 100
@@ -113,6 +123,7 @@ def test():
     # # plt.legend()
     plt.savefig("test.png")
     # plt.show()
+
 
 main()
 # test()

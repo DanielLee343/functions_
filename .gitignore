@@ -15,3 +15,10 @@ run_bench/playground
 run_bench/vtune_log
 dl/train_data_batch_1
 run_bench/normal_run/img_recog/
+dl/cifar10
+dl/cifar100
+dl/mobilenet
+dl/resnet152
+dl/resnet50
+dl/resnet50_imagenet
+run_bench/resnet50_test

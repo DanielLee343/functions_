@@ -13,7 +13,7 @@ gen_rss()
     local workload_name=$2
     # local do_graph=$3
     RSS_FILE=$PLAYGROUND_DIR/$workload_name/"$workload_name"_rss.csv
-
+    rm -rf $RSS_FILE
     # if [ "$do_graph" = true ]; then
     time=0
     # echo "start gen rss at "$(date)
@@ -39,17 +39,19 @@ gen_bw()
     local check_pid=$1
     local workload_name=$2 
     BW_PCM_FILE=$PLAYGROUND_DIR/$workload_name/"$workload_name"_bw_raw.csv
+    MEM_FP_FILE=$PLAYGROUND_DIR/$workload_name/"$workload_name"_numa_fp.csv
+    rm -rf $MEM_FP_FILE
     sudo pcm-memory 0.1 -csv=$BW_PCM_FILE -f -silent &
     while [ -d "/proc/${check_pid}" ]
     do
-        sleep 0.5
+        numactl -H | grep free >> $MEM_FP_FILE
+        sleep 0.1
     done
     sudo pkill -9 pcm-memory >/dev/null 2>&1
     sleep 1
 
-    # TODO: process the csv using python 
-    python /home/cc/functions/run_bench/process_numa_mem.py $BW_PCM_FILE $workload_name
-    # TODO: generate plot
+    python /home/cc/functions/run_bench/process_numa_mem.py $MEM_FP_FILE $func fp
+    python /home/cc/functions/run_bench/process_numa_mem.py $BW_PCM_FILE $workload_name bw
     gnuplot -e "output_file='$PLAYGROUND_DIR/$workload_name/"$workload_name"_bw.png'; \
         input_file='$PLAYGROUND_DIR/$workload_name/"$workload_name"_bw.csv'; \
         wl_title='$workload_name'" \
@@ -69,8 +71,9 @@ gen_heatmap()
     echo "DAMO_FILE: " $DEMO_FILE
     if [ "$do_run_damo" = true ]; then
         echo "running damo..."
-        sudo $DAMO record -s 1000 -a 100000 -u 1000000 -n 5000 -m 6000 \
-            -o $DEMO_FILE $check_pid
+        # sudo $DAMO record -s 1000 -a 100000 -u 1000000 -n 5000 -m 6000 \
+        #     -o $DEMO_FILE $check_pid
+        sudo $DAMO record -o $DEMO_FILE $check_pid
     fi
     echo "processig damo..."
     # sudo $DAMO report raw -i $DEMO_FILE \
@@ -166,6 +169,24 @@ wait_4_gen_heatmap()
     fi
 }
 
+get_numa_mem_stat()
+{
+    echo "getting numa mem footprint stat"
+    local func=$1
+    local check_pid=$2
+    MEM_FP_FILE=$PLAYGROUND_DIR/$func/"$func"_numa_fp.csv
+    rm -rf $MEM_FP_FILE
+    while [ -d "/proc/${check_pid}" ]
+    do
+        # echo "damo, or wl still running..."
+        numactl -H | grep free >> $MEM_FP_FILE
+        sleep 0.1
+    done
+    echo "numa stat done"
+    sleep 1
+    python /home/cc/functions/run_bench/process_numa_mem.py $MEM_FP_FILE $func fp
+}
+
 run_workload()
 {
     # cxl, base
@@ -208,11 +229,13 @@ run_workload()
     elif [ "$func" = "img_proc" ]; then
         workload_cmd="python /home/cc/functions/run_bench/normal_run/img_proc/img_proc.py 191mb"
     elif [ "$func" = "img_recog" ]; then
+        vmtouch -vt /home/cc/functions/run_bench/normal_run/img_recog/images >/dev/null 2>&1
+        vmtouch -vt /home/cc/functions/run_bench/normal_run/img_recog/resnet50-19c8e357.pth >/dev/null 2>&1
         workload_cmd="python /home/cc/functions/run_bench/normal_run/img_recog/img_recog.py place_holder"
     elif [ "$func" = "matmul_go" ]; then
         workload_cmd="matmul 12000"
     elif [ "$func" = "linpack_go" ]; then
-        workload_cmd="linpack 5000"
+        workload_cmd="linpack 4000"
     elif [ "$func" = "pagerank" ]; then
         # local wl_args=$4
         workload_cmd="python /home/cc/functions/run_bench/normal_run/graph_.py pagerank $wl_args $run_vtune $get_heatmap"
@@ -255,15 +278,29 @@ run_workload()
         workload_cmd="python /home/cc/bm_test/cifar100/cifar100.py serve vgg16 10000"
 
     elif [ "$func" = "dl_cifar100_resnet50_128" ]; then
+        vmtouch -vt /home/cc/functions/dl/cifar100 >/dev/null 2>&1
+        vmtouch -vt /home/cc/functions/dl/resnet50 >/dev/null 2>&1
         workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 1 -d cifar100 -m resnet50 -b 128 -hm"
     elif [ "$func" = "dl_cifar100_resnet50_32" ]; then
+        vmtouch -vt /home/cc/functions/dl/cifar100 >/dev/null 2>&1
+        vmtouch -vt /home/cc/functions/dl/resnet50 >/dev/null 2>&1
         workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 1 -d cifar100 -m resnet50 -b 32 -hm"
     elif [ "$func" = "dl_cifar100_resnet152_128" ]; then
+        vmtouch -vt /home/cc/functions/dl/cifar100 >/dev/null 2>&1
+        vmtouch -vt /home/cc/functions/dl/resnet152 >/dev/null 2>&1
         workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 1 -d cifar100 -m resnet152 -b 128 -hm"
     elif [ "$func" = "dl_cifar10_mobilenet_128" ]; then
+        vmtouch -vt /home/cc/functions/dl/cifar10 >/dev/null 2>&1
+        vmtouch -vt /home/cc/functions/dl/mobilenet >/dev/null 2>&1
         workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 5 -d cifar10 -m mobilenet -b 128 -hm"
     elif [ "$func" = "dl_downsample_imagenet_resnet50_128" ]; then
+        vmtouch -vt /home/cc/functions/dl/train_data_batch_1 >/dev/null 2>&1
+        vmtouch -vt /home/cc/functions/dl/resnet50_imagenet >/dev/null 2>&1
         workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 1 -d downsample_imagenet -m resnet50 -b 128 -hm"
+    elif [ "$func" = "dl_downsample_imagenet_resnet50_512" ]; then
+        vmtouch -vt /home/cc/functions/dl/train_data_batch_1 >/dev/null 2>&1
+        vmtouch -vt /home/cc/functions/dl/resnet50_imagenet >/dev/null 2>&1
+        workload_cmd="python /home/cc/functions/dl/dl.py -job dl -e 1 -d downsample_imagenet -m resnet50 -b 512 -hm"
     elif [ "$func" = "dl_inference" ]; then
         workload_cmd="python /home/cc/functions/dl/inference.py 16 true"
 
@@ -281,12 +318,12 @@ run_workload()
         cd ~/gapbs
         make
         cd
-        workload_cmd="/home/cc/gapbs/bfs -f $TWITTER_WHOLE -n 50 -d $func"
+        workload_cmd="/home/cc/gapbs/bfs -f $TWITTER_WHOLE -n 150 -d $func"
     elif [ "$func" = "gapbs_cc_twitter_whole" ]; then
         cd ~/gapbs
         make
         cd
-        workload_cmd="/home/cc/gapbs/cc -f $TWITTER_WHOLE -n16 -d $func"
+        workload_cmd="/home/cc/gapbs/cc -f $TWITTER_WHOLE -n64 -d $func"
     elif [ "$func" = "gapbs_tc_twitter_whole" ]; then
         cd ~/gapbs
         make
@@ -317,8 +354,8 @@ run_workload()
         export OMP_NUM_THREADS=8
     fi
     # run workload
-    # 2> $PLAYGROUND_DIR/$wl_folder/intecepted.log
-    $cmd_prefix $workload_cmd 2> $PLAYGROUND_DIR/$wl_folder/intercepted.log &
+    # 2> $PLAYGROUND_DIR/$wl_folder/intercepted.log
+    $cmd_prefix $workload_cmd 2> $PLAYGROUND_DIR/$wl_folder/intercepted_095rand.log &
     check_pid=$!
     if [ "$check_pid" = "" ]; then
         echo "unable to get wl pid, something is wrong"; exit 1
@@ -335,6 +372,7 @@ run_workload()
     # fi
 
     # run_trace_prefix="numactl --cpunodebind 1 -- "
+    # get_numa_mem_stat $wl_folder $check_pid &
     if [ "$get_rss" = true ] ; then
         wait_4_gen_rss $func $wl_folder $check_pid &
 
@@ -372,5 +410,6 @@ echo 1 | sudo tee /proc/sys/vm/drop_caches
 #         sleep 5
 #     done
 # done
+sudo pkill -9 python
 kill_remain_damo
 run_workload $1 $2 $3

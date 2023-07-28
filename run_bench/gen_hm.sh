@@ -5,6 +5,7 @@ PLAYGROUND_DIR=/home/cc/functions/run_bench/playground
 gen_heatmap()
 {
     local workload_name=$1
+    local wss_or_all=$2
     # check if region range is good
     DEMO_FILE=$PLAYGROUND_DIR/$workload_name/"$workload_name".data
     # DEMO_FILE=/home/cc/functions/run_bench/playground/gapbs_bc_twitter_whole/gapbs_bc_twitter_whole.data
@@ -17,28 +18,52 @@ gen_heatmap()
 
     # sudo $DAMO report raw -i $DEMO_FILE \
     #     > $PLAYGROUND_DIR/$workload_name/"$workload_name".txt & # <- no need 
-    # sudo numactl --cpunodebind 1 -- $DAMO report wss -i $DEMO_FILE \
-    #     --sortby time \
-    #     --range 0 100 1 \
-    #     --plot $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.png &
-    # sudo numactl --cpunodebind 1 -- $DAMO report wss -i $DEMO_FILE \
-    #     --all_wss > $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.txt &
-    sudo $DAMO report heats -i $DEMO_FILE --guide &
-    sudo $DAMO report heats -i $DEMO_FILE \
-        --resol 1000 2000 --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png &
-    sudo $DAMO report heats -i $DEMO_FILE \
-        --abs_time --abs_addr --resol 1000 2000 > $PLAYGROUND_DIR/$workload_name/abs_addr_time.txt &
+    if [ "$wss_or_all" = "wss" ]; then
+        echo "generating wss profiles..."
+        sudo numactl --cpunodebind 1 -- $DAMO report wss -i $DEMO_FILE \
+            --sortby time \
+            --range 0 100 1 \
+            --plot $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.png &
+        sudo numactl --cpunodebind 1 -- $DAMO report wss -i $DEMO_FILE \
+            --all_wss > $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.txt &
+    elif [ "$wss_or_all" = "all" ]; then
+        echo "generating all profiles..."
+        sudo numactl --cpunodebind 1 -- $DAMO report wss -i $DEMO_FILE \
+            --sortby time \
+            --range 0 100 1 \
+            --plot $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.png &
+        sudo numactl --cpunodebind 1 -- $DAMO report wss -i $DEMO_FILE \
+            --all_wss > $PLAYGROUND_DIR/$workload_name/"$workload_name"_wss.txt &
+        sudo $DAMO report heats -i $DEMO_FILE \
+            --resol 1000 2000 --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png &
+        sudo $DAMO report heats -i $DEMO_FILE \
+            --abs_time --abs_addr --resol 1000 2000 > $PLAYGROUND_DIR/$workload_name/abs_addr_time.txt &
+        sudo $DAMO report heats -i $DEMO_FILE --guide &
+    elif [ "$wss_or_all" = "heats" ]; then
+        sudo $DAMO report heats -i $DEMO_FILE \
+            --resol 1000 2000 --heatmap $PLAYGROUND_DIR/$workload_name/"$workload_name".png &
+        sudo $DAMO report heats -i $DEMO_FILE \
+            --abs_time --abs_addr --resol 1000 2000 > $PLAYGROUND_DIR/$workload_name/abs_addr_time.txt &
+        sudo $DAMO report heats -i $DEMO_FILE --guide &
+    else
+        echo "pls specify to get wss or all profiling"; exit 1
+    fi
+
+    # regions_out=$(sudo $DAMO report heats -i $DEMO_FILE --guide)
+    # num_regions_tmp=$($regions_out | wc -l)
+    # num_regions=$((num_regions_tmp - 2))
+    # echo num_rregions: $num_regions
 
     while [ ! -z "$(ps aux | grep 'damo' | grep -v grep | awk '{print $2}' | head -n 1)" ]
     do
         sleep 1
     done
     sudo chown -R $(whoami) $PLAYGROUND_DIR/$workload_name/*
-    # python /home/cc/functions/run_bench/get_bw_wss_stat.py $workload_name wss
+    python /home/cc/functions/run_bench/get_bw_wss_stat.py $workload_name wss
     # if [ "$workload_name" = "gif" ]; then
         # /home/cc/functions/run_bench/truncate_file.sh
-    # python /home/cc/functions/run_bench/split_lines.py $workload_name
     # fi
+    # python /home/cc/functions/run_bench/split_lines.py $workload_name 3
     echo "plot wss and heatmap done"
 }
 gen_heatmap_time_range()
@@ -67,4 +92,4 @@ gen_heatmap_time_range()
 
 # $1: workload name, eg., dl_cifar100_resnet50_128
 # gen_heatmap_time_range $1 $2 $3
-gen_heatmap $1
+gen_heatmap $1 $2
